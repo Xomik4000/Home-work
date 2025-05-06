@@ -29,11 +29,7 @@ console.log(result5);
 console.log(0 === result5); // чётное 
 
 // Третье задание 
- 
-const name = "" ;
-
-if (!name) {
-    console.log("Hello, Guest!")
-} else {
- console.log("Hello, " + name + "!")
-}
+ let name = '';
+ let defaultName = 'Guest';
+ const fullName = name || defaultName;
+console.log('Hello, ' + fullName + '!' )
