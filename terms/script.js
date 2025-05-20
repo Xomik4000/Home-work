@@ -1,15 +1,15 @@
-const num = 1 ;
+const num = -1 ;
 
-let massage = (num === 0) ? 'Это ноль!'
+const message = (num === 0) ? 'Это ноль!'
  : (num < 0) ? 'Отрицательное число!' 
  : 'Положительное число!'
-console.log(massage)  // Первое задание
+console.log(message)  // Первое задание
 
-let heightUser = 183 
-let transferredWeight = heightUser / 100
+const userHeight = 180 
+const transferredWeight = userHeight / 100
 
-let weightUser = 80 
-let bmi = weightUser / (transferredWeight * transferredWeight)
+const userWeight = 80 
+const bmi = userWeight / (transferredWeight * transferredWeight)
 
 if (bmi < 18.5) {
     console.log('Недостаточная масса тела');
