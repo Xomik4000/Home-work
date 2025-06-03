@@ -17,10 +17,15 @@ const sum = numBers.reduce((total, num) => total + num, 0)
 
 console.log(sum) //Третье задание
 
-const nUmbers = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+let arr = [1, 2, 3, 4, 5]
+console.log(arr[0]) 
+let reversedArr = []
 
-const sorting = nUmbers.sort()
-console.log(sorting) // Четвёртое задание
+for (let i = arr.length - 1; i >= 0; i--) {
+    reversedArr.push(arr[i])
+}
+
+console.log(reversedArr) //Четвёртое задание 
 
 const name = 'Саша'
 let age = 24
