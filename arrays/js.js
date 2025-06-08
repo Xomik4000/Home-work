@@ -17,15 +17,37 @@ const sum = numBers.reduce((total, num) => total + num, 0)
 
 console.log(sum) //Третье задание
 
-let arr = [1, 2, 3, 4, 5]
+const arr3 = [1, 2, 3, 4, 5]
 console.log(arr[0]) 
-let reversedArr = []
+const reversedArr3 = []
 
 for (let i = arr.length - 1; i >= 0; i--) {
-    reversedArr.push(arr[i])
+    reversedArr3.push(arr3[i])
 }
 
-console.log(reversedArr) //Четвёртое задание 
+console.log(reversedArr3) 
+
+
+//Новые методы
+const arr1 = [1, 2, 3, 4, 5]
+
+const reverseArr = []
+
+while(reverseArr.length < arr1.length) {
+    reverseArr[reverseArr.length] = arr1[arr1.length - reverseArr.length - 1]
+}
+
+console.log(reverseArr) //Цикл While
+
+const arr2 = [1, 2, 3, 4, 5]
+const reverseArr2 = []
+
+arr2.forEach(num => {
+    reverseArr2.unshift(num)
+})
+
+console.log(reverseArr2) //Метод unshift и forEach
+//Четвёртое задание 
 
 const name = 'Саша'
 let age = 24
