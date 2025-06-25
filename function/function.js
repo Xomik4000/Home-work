@@ -30,7 +30,7 @@ function createPhoneNumber(input) {
     const part2 = digits.slice(3, 6)
     const part3 = digits.slice(6)
 
-    return `8 (${part1}) (${part2}) (${part3})`
+    return `8 (${part1}) ${part2}-${part3}`
 }
 
 console.log(createPhoneNumber(123456789)); //Третье задание
@@ -38,7 +38,7 @@ console.log(createPhoneNumber(123456789)); //Третье задание
 function minAndMaxNumber (arr) {
     const minNumber = Math.min(...arr)
     const maxNumber = Math.max(...arr)
-    return `Маскимальное чило: ${maxNumber}; Минимальное число: ${minNumber}`
+    return `Максимальное чило: ${maxNumber}; Минимальное число: ${minNumber}`
 }
 
 const arr = [213, 312, 343, 234, 11, 2, 4, 5555, 455, 234]
