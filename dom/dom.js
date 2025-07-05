@@ -11,13 +11,17 @@ document.body.appendChild(newElement) //третье задание
 
 function removeToElement(element) {
     const id = document.getElementById(element);
-    id.parentNode.removeChild(id)
+    id.remove()
     return id
 }
-
 removeToElement('link') //Четвёртое задание
 
 const items = document.getElementsByClassName('item')
+if (items[2]) {
+    console.log(items[2] + ' ' + 'элемент найден');
+} else {
+    console.log('Элеменет не найден');
+}
 const link = items[2].querySelector('a')
 link.setAttribute('href', 'https://translate.yandex.ru/translator')
 console.log(link.getAttribute('href')); //Пятое задание
