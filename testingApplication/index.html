@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <h1 class="title">Тест на знание игры в кальмара</h1>
+  <div id="questionBlock">
+    <ul id="q1" class="questionText">1. Как называлась первая игра?
+      <li class="answer" data-correct="true">Тише едешь - дальше будешь</li>
+      <li class="answer">Живи или умри</li>
+      <li class="answer">Фигуры</li>
+      <li class="answer">Замри</li>
+    </ul>
+    <ul id="q2" class="questionText">2. Сколько денег получает победитель игры
+      <li class="answer" data-correct="true">45.6 миллиардов вон</li>
+      <li class="answer">49.6 миллиардов вон</li>
+      <li class="answer">45 миллиардов вон</li>
+      <li class="answer">50 миллиардов вон</li>
+    </ul>
+    <ul id="q3" class="questionText">3. Под каким номером был Сон Ги-Хун?
+      <li class="answer">069</li>
+      <li class="answer" data-correct="true">456</li>
+      <li class="answer">001</li>
+      <li class="answer">426</li>
+    </ul>
+    <p class="questionText">4. Во второй игре какую фигуру выбрал Сон Ги-Хун?
+      <input class="myInput" placeholder="Введи ответ" type="text">
+    </p>
+    <ul id="q5" class="questionText">5. Сколько игроков выжило после первой игры?
+      <li class="answer">Больше половины(228+)</li>
+      <li class="answer" data-correct="true">Меньше половины(228-)</li>
+    </ul>
+    <ul id="q6" class="questionText">6. Сколько Випов приезжало на игру?
+      <li class="answer">8</li>
+      <li class="answer" data-correct="true">5</li>
+      <li class="answer">6</li>
+      <li class="answer">7</li>
+    </ul>
+    <ul id="q7" class="questionText">7.Сколь игр было сыграно?
+      <li class="answer">4</li>
+      <li class="answer">5</li>
+      <li class="answer" data-correct="true">6</li>
+      <li class="answer">7</li>
+    </ul>
+    <p class="questionText">8. Кто убирает трупы выбывших игроков после игр?
+      <input class="myInput" placeholder="Введи ответ" type="text">
+    </p>
+    <div class="conclusion questionText">
+    <p id="result">Вы ответили правильно на 0 из 8 вопросов</p>
+    <button id="reloadButton" class="js-hover-button">Перезапустить тест</button>
+  </div>
+  </div>
+  <button id="startButton" class="js-hover-button">Начать тест</button>
+  <script src="./script.js"></script>
+</body>
+</html>
