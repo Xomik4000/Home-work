@@ -1,10 +1,14 @@
 
-#questionBlock {
+#questionContainer {
     text-align: center;
     margin-top: 20px;
 }
 
-.questionText {
+#reloadButton {
+    display: none;
+}
+
+#result {
     display: none;
 }
 
@@ -87,6 +91,3 @@ button {
     transform: scale(1.05);
 }
 
-.conclusion {
-    display: none;
-}
