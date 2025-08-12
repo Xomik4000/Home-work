@@ -31,13 +31,13 @@ increment()
 counterValue() //Второе задание
 
 function fibonacciNumbers() {
-    let a = 0;
-    let b = 1;
     return function(n) {
+        let a = 0;
+        let b = 1;
         for (let i = 0; i < n; i++) {
-            let temp = a //1
-            a = b // 2 
-            b = temp + b // 3  i = 2
+            let temp = a 
+            a = b 
+            b = temp + b 
         }
         return a;
     }
