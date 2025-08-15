@@ -13,12 +13,12 @@ try {
 
 
 
-function transfromJSON(str) {
+function transformJSON(str) {
     const userJson = JSON.parse(str)
-    if (userJson.name === undefined) {
+    if (typeof userJson.name === 'undefined') {
         throw new Error('Имя не заполнено')
     }
-    if (!userJson.age) {
+    if (typeof userJson.age === 'undefined') {
         throw new Error('Возраст не заполнен')
     }
     return userJson
@@ -27,7 +27,7 @@ function transfromJSON(str) {
  
 try {
     const user = '{ "name": "Alex", "age": 24 }'
-    console.log(transfromJSON(user));
+    console.log(transformJSON(user));
 } catch (e) {
     console.log('Ошибка:', e.message);
 } // Второе задание
