@@ -8,7 +8,7 @@ const character = {
     inventory: [
         {
             name: 'зелье здоровья',
-            health: 30,
+            health: 20,
             quantity: 3
         },
         {
@@ -18,6 +18,7 @@ const character = {
         }
     ],
     isDefending: false,
+    shieldBonus: 0,
     attack(target) {
         if (!target.isAlive || target.health <= 0) {
             return;
@@ -57,8 +58,14 @@ const character = {
                 }
 
                 if (item.protection) {
-                    this.protection += item.protection
-                    writeLog(`${this.name} использует ${item.name} и получает ${item.protection} к защите.`)
+                    if (this.shieldBonus === 0) {
+                        this.shieldBonus = item.protection;
+                        this.protection += item.protection;
+                        writeLog(`${this.name} использует ${item.name} и временно получает +${item.protection} к защите.`);
+                        updateStats(this);
+                    } else {
+                        writeLog('Бонус щита уже активен (на 1 входящую атаку).')
+                    }
                 }
 
                 item.quantity -= 1;
@@ -88,10 +95,15 @@ const goblin = {
             effectiveProtection *= 2;
             target.isDefending = false
         }
-        
+
         const damage = Math.max(0, this.strength - effectiveProtection)
 
         target.health = Math.max(0, target.health - damage)
+        if (target.shieldBonus > 0) {
+            target.protection -= target.shieldBonus;
+            target.shieldBonus = 0;
+            updateStats(target)
+        }
         updateStats(target)
 
         writeLog(`${this.name} атакует ${target.name}а и наносит ${damage} урона. Ваше здоровье: ${target.health}`);
@@ -108,7 +120,7 @@ const ork = {
     health: 40,
     protection: 8,
     strength: 15,
-    attack(target) {
+   attack(target) {
         if (!target.isAlive || target.health <= 0) return;
 
         let effectiveProtection = target.protection;
@@ -116,12 +128,18 @@ const ork = {
             effectiveProtection *= 2;
             target.isDefending = false
         }
-        
+
         const damage = Math.max(0, this.strength - effectiveProtection)
 
         target.health = Math.max(0, target.health - damage)
+
+        if (target.shieldBonus > 0) {
+            target.protection -= target.shieldBonus;
+            target.shieldBonus = 0;
+            updateStats(target)
+        }
         updateStats(target)
-        
+
         writeLog(`${this.name} атакует ${target.name}а и наносит ${damage} урона. Ваше здоровье: ${target.health}`);
         if (target.health === 0) {
             target.isAlive = false;
@@ -130,14 +148,17 @@ const ork = {
     }
 }
 
+let currentEnemy = null
+
 function resetGame() {
     character.name = 'Геральт';
     character.health = 100;
     character.isAlive = true;
     character.strength = 16;
-    character.protection = 8;
+    character.protection = 5;
     character.level = 1;
     character.isDefending = false;
+    character.shieldBonus = 0;
     character.inventory = [
         { name: 'зелье здоровья', health: 30, quantity: 3 },
         { name: 'щит', protection: 5, quantity: 1 }
@@ -186,7 +207,6 @@ function updateStats(character) {
 }
 
 const logWindow = document.getElementById('log'); // окно журнала
-
 const attackButton = document.getElementById('attack')
 const protectionButton = document.getElementById('protection-button')
 const inventoryButton = document.getElementById('inventory-button')
@@ -211,13 +231,16 @@ attackButton.addEventListener('click', function() {
 });
 
 protectionButton.addEventListener('click', () => {
-    console.log('нажать');
     if (!currentEnemy || !currentEnemy.isAlive){
         writeLog('Враг побеждён. Перейдите в следующую локацию.')
         return
     } 
     character.defend()
-    currentEnemy.attack(character)
+    updateStats(character)
+
+    setTimeout(() => {
+        currentEnemy.attack(character)
+    }, 200)
 })
 
 inventoryButton.addEventListener('click', function() {
@@ -242,9 +265,10 @@ inventoryButton.addEventListener('click', function() {
     }
 
     character.useOfInventory(itemName)
-    updateStats(character)
 
-    currentEnemy.attack(character)
+    setTimeout(() => {
+        currentEnemy.attack(character)
+    }, 200)
 })
 
 
