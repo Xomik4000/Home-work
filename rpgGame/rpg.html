@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container"> 
+    <div class="interface">
+        <div class="title"><h3> Текстовая RPG Игра</h3></div>
+        <div class="info-block">
+            <div class="characteristics">
+                <ul class="info-parameters">
+                    <li class="parameter">Имя: <span id="name"></span></li>
+                    <li class="parameter">Здоровье: <span id="health"></span></li>
+                    <li class="parameter">Сила: <span id="strength"></span></li>
+                    <li class="parameter">Защита: <span id="protection"></span></li>
+                    <li class="parameter">Уровень: <span id="level"></span></li>
+                    <li class="parameter">Инвентарь: <span id="inventory"></span></li>
+                </ul>
+            </div>
+            <div class="actions">
+                <div class="attack">
+                    <button id="attack"> Атаковать</button>
+                </div>
+                <div class="protection">
+                    <button id="protection-button"> Защищаться</button>
+                </div>
+                <div class="itemUse">
+                    <button id="inventory-button">Использовать предмет</button>
+                </div>
+                <div class="restart">
+                    <button id="restart-button">Начать сначала</button>
+                </div>
+            </div>
+        </div>
+        <div class="info-position">
+            <div class="current-position">Текущая локация: <span id="position"> Деревня </span> </div>
+            <ul class="locations">
+                <li>
+                    <button id="forest" class="location">Идти в лес</button>
+                </li>
+                <li>
+                    <button id="dungeon" class="location"> Идти в подземелье </button>
+                </li>
+                <li>
+                    <button id="village" class="location">Вернуться в деревню</button>
+                </li>
+            </ul>
+        </div>
+        <div class="activity-log">
+            <div id="log" class="text"></div>
+        </div>
+    </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
