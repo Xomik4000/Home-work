@@ -1,15 +1,19 @@
-// let count = 10 
+let count = 10 
+let timer
 
-// function showTimer(prefix) {
-//   console.log(`${prefix}: ${count}`);
-//   count--
-//   const timer = setTimeout(showTimer, 1000, 'Осталось секунд')
-//   if (count < 0) {
-//     clearTimeout(timer)
-//   }
-// }
+function showTimer(prefix) {
+    console.log(`${prefix}: ${count}`);
+    count--
 
-// setTimeout(showTimer, 1000, 'Осталось секунд')
+    if (count < 0) {
+        clearTimeout(timer)
+        return
+    }
+    
+    timer = setTimeout(showTimer, 1000, 'Осталось секунд')
+}
+
+setTimeout(showTimer, 1000, 'Осталось секунд')
 // //Первое задание
 
 // function showMessageDrinkWater(message) {
@@ -19,27 +23,27 @@
 // setInterval(showMessageDrinkWater, 1800000, 'Не забудь выпить воды!')
 // //Второе задание
 
-const inputDelay = document.getElementById('delay');
-const inputText = document.getElementById('text');
-const myButton = document.getElementById('myButton')
+// const inputDelay = document.getElementById('delay');
+// const inputText = document.getElementById('text');
+// const myButton = document.getElementById('myButton')
 
-function handleButton() {
-  console.log('Задержка:',inputDelay.value);
-  console.log('Текст:', inputText.value);
-}
+// function handleButton() {
+//   console.log('Задержка:',inputDelay.value);
+//   console.log('Текст:', inputText.value);
+// }
 
-let intervalId = null
+// let intervalId = null
 
-myButton.addEventListener('click', (e) => {
-  e.preventDefault()
-  if (intervalId !== null) {
-    clearInterval(intervalId);
-    intervalId = null;
-    console.log('текст не выводится');
-    return
-  }
+// myButton.addEventListener('click', (e) => {
+//   e.preventDefault()
+//   if (intervalId !== null) {
+//     clearInterval(intervalId);
+//     intervalId = null;
+//     console.log('текст не выводится');
+//     return
+//   }
   
-  intervalId = setInterval(handleButton, 2000)
-  console.log('текст запущен с задержкой');
-})
+//   intervalId = setInterval(handleButton, 2000)
+//   console.log('текст запущен с задержкой');
+// })
 
