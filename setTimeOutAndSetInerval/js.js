@@ -3,17 +3,14 @@ let timer
 
 function showTimer(prefix) {
     console.log(`${prefix}: ${count}`);
-    count--
+    count--;
 
-    if (count < 0) {
-        clearTimeout(timer)
-        return
-    }
-    
-    timer = setTimeout(showTimer, 1000, 'Осталось секунд')
+    if (count >= 0) {
+        setTimeout(showTimer, 1000, 'Осталось секунд')
+    } 
 }
 
-setTimeout(showTimer, 1000, 'Осталось секунд')
+showTimer('Осталось секунд')
 // //Первое задание
 
 // function showMessageDrinkWater(message) {
