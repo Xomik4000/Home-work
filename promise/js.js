@@ -56,7 +56,7 @@ function getRandomDelay() {
 
 
 
-function createPromise(number) {
+function createPromise1(number) {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(number)
@@ -64,7 +64,7 @@ function createPromise(number) {
     })
 }
 
-function createPromise(number) {
+function createPromise2(number) {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(number)
@@ -72,7 +72,7 @@ function createPromise(number) {
     })
 }
 
-Promise.race([createPromise('первый промис'), createPromise('второй промис')])
+Promise.race([createPromise1('первый промис'), createPromise2('второй промис')])
     .then((data) => {
         console.log('Первый выполнился:', data);
     })
