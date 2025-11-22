@@ -50,26 +50,29 @@ Promise.all([getUserData2(user1, 3000), getUserData2(user2, 5000)])
 
 function getRandomDelay() {
     const delayMs = Math.random() * 4000 + 1000
-    return delayMs
+    return Math.round(delayMs)
 }
 
-function getPromises1() {
+
+
+
+function createPromise(number) {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve('Первый промис ')
+            resolve(number)
         }, getRandomDelay())
     })
 }
 
-function getPromises2() {
+function createPromise(number) {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve('Второй промис ')
+            resolve(number)
         }, getRandomDelay())
     })
 }
 
-Promise.race([getPromises1(), getPromises2()])
+Promise.race([createPromise('первый промис'), createPromise('второй промис')])
     .then((data) => {
         console.log('Первый выполнился:', data);
     })
