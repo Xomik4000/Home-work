@@ -1,25 +1,4 @@
-// document.getElementById('parent').addEventListener('click', () => console.log('parent clicked'))
-// document.getElementById('child').addEventListener('click', () => console.log('child clicked'))
 
-// document.getElementById('child').addEventListener('click', (e) => {
-//     console.log('child clicked')
-//     e.stopPropagation()
-// })
-
-// document.getElementById('parent').addEventListener('click', () => console.log('parent clicked'))
-
-// document.getElementById('child').addEventListener('click', (e) => {
-//     alert('first handler')
-//     e.stopImmediatePropagation()
-// })
-
-// document.getElementById('child').addEventListener('click', () => alert('second handler'))
-
-// document.getElementById('list').addEventListener('click', (e) => {
-//     if (e.target.tagName === 'LI') {
-//         console.log('Item clicked:', e.target.textContent)
-//     }
-// })
 
 const first = document.getElementById('first')
 const second = document.getElementById('second')
@@ -50,26 +29,3 @@ myForm.addEventListener('input', () => {
 }) //третье задание
 
 
-
-// first.addEventListener('click', showTag, true)
-// second.addEventListener('click', showTag, true)
-// third.addEventListener('click', showTag, true)
-
-
-// function showTag(e) {
-//     console.log(e.eventPhase + ' : ' + e.currentTarget. tagName + ' от ' + e.target.tagName)
-// }
-
-// const buttons = document.querySelectorAll('.btn');
-
-// const handleClick = (e) => {
-//     console.log('target >', e.target)
-//     console.log('currentTarget >', e.currentTarget)
-//     console.log( e.target === e.currentTarget)
-// }
-
-// window.addEventListener('click', () => console.log('window click'))
-
-// buttons.forEach(button => {
-//     button.addEventListener('click', handleClick)
-// })
