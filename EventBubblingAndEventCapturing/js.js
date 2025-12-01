@@ -24,7 +24,7 @@ myForm.addEventListener('input', () => {
         const value = input.value
         if (value.length > maxLength) {
             input.value = value.slice(0, maxLength)
-            console.log(`Ввод ограничен. Длина строки не должна превышать 20 символов, сейчас ${value.length}`)
+            console.log(`Ввод ограничен. Длина строки не должна превышать 10 символов, сейчас ${value.length}`)
         }
     })
 }) //третье задание
