@@ -15,7 +15,8 @@ saveButton.addEventListener('click', (e) => {
     localStorage.setItem('userData', JSON.stringify(userData))
 })
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault()
     const saveUserData = JSON.parse(localStorage.getItem('userData'))
     if (saveUserData) {
         result.textContent = JSON.stringify(saveUserData, null, 2)
