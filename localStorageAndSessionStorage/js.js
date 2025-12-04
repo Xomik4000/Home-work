@@ -15,8 +15,7 @@ saveButton.addEventListener('click', (e) => {
     localStorage.setItem('userData', JSON.stringify(userData))
 })
 
-document.addEventListener('DOMContentLoaded', (e) => {
-    e.preventDefault()
+document.addEventListener('DOMContentLoaded', () => {
     const saveUserData = JSON.parse(localStorage.getItem('userData'))
     if (saveUserData) {
         result.textContent = JSON.stringify(saveUserData, null, 2)
@@ -39,7 +38,12 @@ function removeItem(key) {
     return window.localStorage.removeItem(key);
 }
 removeItem('expenses')
-console.log(JSON.parse(localStorage.getItem('expenses')))
+if (localStorage.getItem('expenses') !== null) {
+    console.log('Данные по расходам:', JSON.parse(localStorage.getItem('expenses')))
+} else {
+    console.log('Остутствие данных')
+}
+
 //Второе задание
 
 const activeTimeElement = document.getElementById('activeTime')
