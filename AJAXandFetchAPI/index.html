@@ -10,24 +10,47 @@
 </head>
 <body>
     <img src="./201.png" alt="">
-    <form action="">
+    <form action="" id="loadForm">
         <div>
             <label  for="">ID</label>
             <input name="userId" type="text">
         </div>
         <div>
             <label for="">Заголовок</label>
-            <input name="header" type="text">
+            <input name="title" type="text">
         </div>
         <div>
             <label for="">Текст</label>
-            <input name="text" type="text">
+            <input name="body" type="text">
         </div>
-        <button id="loadForm">Загрузить форму</button>
+        <button type="submit">Загрузить форму</button>
     </form>
+    <div id="answer"></div>
     <br>
     <br>
+    <form action="" id="loadFormUsers">
+        <div>
+            <label  for="">Имя</label>
+            <input name="name" type="text">
+        </div>
+        <div>
+            <label for="">ID пользователя</label>
+            <input name="id" type="text">
+        </div>
+        <div>
+            <label for="">Email</label>
+            <input name="email" type="text">
+        </div>
+        <button type="submit">Обновить пользователя</button>
+    </form>
+    <div id="updatedUser"></div>
     <br>
+    <form id="patchUserForm">
+        <input name="id" type="text" placeholder="ID пользователя">
+        <input name="email" type="text" placeholder="Новый email">
+        <button type="submit">Обновить Email</button>
+    </form>
+    <div id="patchedUser"></div>
     <button id="loadPost">Загрузить посты</button>
     <ul id="postList"></ul>
     <script src="js.js"></script>
