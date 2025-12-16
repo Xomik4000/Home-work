@@ -26,7 +26,7 @@ class User {
         this.email = email
     }
 
-    displayInsfo() {
+    displayInfo() {
         console.log(`Имя: ${this.name}`)
         console.log(`Email: ${this.email}`)
     }
@@ -35,8 +35,8 @@ class User {
 const user1 = new User('Алексей', 'alex.@bk.ru')
 const user2 = new User('Анна', 'anna12.@bk.com')
 
-user1.displayInsfo()
-user2.displayInsfo() //Второе задание
+user1.displayInfo()
+user2.displayInfo() //Второе задание
 
 
 
@@ -46,12 +46,8 @@ class Rectangle {
         this._height = height
     }
 
-    get area() {
-       return this.width * this._height; //в примере тут просто this.height 
-    }
-
-    get perimeter() {
-        return 2 * (this.width + this._height)
+    get height() {
+        return this._height
     }
 
     set height(value) {
@@ -62,8 +58,12 @@ class Rectangle {
         }
     }
 
-    get height() {
-        return this._height
+    get area() {
+       return this.width * this.height; //в примере тут просто this.height 
+    }
+
+    get perimeter() {
+        return 2 * (this._width + this._height)
     }
 
     set width(value) {
