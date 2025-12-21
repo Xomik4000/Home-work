@@ -15,7 +15,11 @@ class Counter {
     }
 
     getCount() {
-        console.log(this.count)
+        return this.count
+    }
+
+    showCount() {
+        console.log(this.getCount())
     }
 }
 
@@ -23,11 +27,11 @@ const counter = new Counter()
 counter.increment()
 counter.increment()
 counter.increment()
-counter.getCount()
+counter.showCount()
 counter.decrement()
-counter.getCount()
+counter.showCount()
 counter.decrement()
-counter.getCount() // первое задание
+counter.showCount() // первое задание
 
 class EmailValidator {
     static isValid(email) {
@@ -56,11 +60,14 @@ class Order {
     }
 
     getTotalPrice() {
-        console.log(`Общая стоимость товара составит ${this.#calculateTotal()} руб`)
+        return this.#calculateTotal()
     }
 
+    showTotalPrice() {
+        console.log(`Общая стоимость товара составит ${this.getTotalPrice()} руб`)
+    }
 }
 
 const order1 = new Order('Айфон 17', 90000, 2)
-order1.getTotalPrice() // Третье задание
+order1.showTotalPrice() // Третье задание
 
