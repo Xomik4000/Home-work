@@ -58,7 +58,7 @@ function renderTask(task) {
     deleteBtn.textContent = 'Удалить';
     deleteBtn.addEventListener('click', () => {
         li.remove()
-        tasks = tasks.filter(t => t !== task);
+        tasks = tasks.filter(t => t.title !== task.title);
         saveTask()
     })
 
@@ -93,13 +93,12 @@ form.addEventListener('submit', (e) => {
 
     const taskText = input.value.trim();
     
-    if (taskText) {
-        addTask(taskText)
-    }
-
     if (taskText === '') {
         alert('Строка не может быть пустой')
+        return;
     }
+
+    addTask(taskText)
 
     input.value = ''
 })
