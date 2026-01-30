@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/commons.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/shop.css">
+</head>
+<body>
+<header class="header">
+        <div class="left-side">
+            <div class="logo-container">
+                <div class="burger-menu">
+                    <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+                    <label class="burger" for="burger-checkbox"></label>
+                </div>
+                <div class="logo">
+                    <img src="./icons/logo.svg" alt="logo">
+                </div>
+            </div>    
+            <div class="menu">
+                <div class="menu-item">
+                    <span>Home</span>
+                </div>
+                <div class="menu-item">
+                    <span>Pages</span>
+                    <img src="./icons/arrow.svg" alt="arrow" class="arrow-default">
+                    <img src="./icons/arrow-pink.svg" alt="arrow-pink" class="arrow-hover">
+                </div>
+                <div class="menu-item active">
+                    <span>Shop</span>
+                    <img src="./icons/arrow.svg" alt="arrow" class="arrow-default">
+                    <img src="./icons/arrow-pink.svg" alt="arrow-pink" class="arrow-hover">
+                </div>
+                <div class="menu-item">
+                    <span>Blog</span>
+                </div>
+                <div class="menu-item">
+                    <span>Contact</span>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="header-icon">
+                <img src="./icons/search.svg" alt="search">
+            </div>
+            <div class="header-icon">
+                <img src="./icons/profile.svg" alt="profile">
+            </div>
+            <div class="header-icon">
+                <img src="./icons/favorites.svg" alt="favorites">
+                <div class="counter">1</div>
+            </div>
+            <div class="header-icon">
+                <img src="./icons/cart.svg" alt="cart">
+                <div class="counter">2</div>
+            </div>
+        </div>
+</header>
+
+<main>
+    <section class="container-content">
+        <div class="container-content-left">
+            <div class="content-icons">
+                <img class="content-photo" src="./icons/points-content.svg" alt="content-icons">
+            </div>
+            <h1 class="title">Shop</h1>
+            <div class="content-item">
+                <div class="content-menu-items">
+                    <div class="menu-item-content">
+                        <div class="vertical-line"></div>
+                    </div>
+                    <p class="menu-item-content">
+                        Home
+                    </p>
+                    <p class="menu-item-content active">
+                        Shop
+                    </p>
+                </div>
+            </div>
+            <div class="content-line"></div>
+        </div>
+        <div class="container-content-right"></div>
+    </section>
+    <section class="container">
+        <div class="shop">
+            <div class="sidebar">
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search" class="input search-row">
+                        <img src="./icons/search.svg" alt="search" class="search-icon">
+                    </label>
+                </div>
+                <div class="sidebar-item">
+                    <h4 class="sidebar-title">Categories</h4>
+                    <div class="sidebar-content">
+                        <ul class="custom-list">
+                            <li class="item">All</li>
+                            <li class="item active">Men</li>
+                            <li class="item">Women</li>
+                            <li class="item">Accessories</li>
+                            <li class="item">New Arrivals</li>
+                        </ul>
+                    </div>
+                </div>    
+                <div class="sidebar-item">
+                    <h4 class="sidebar-title">Price</h4>
+                    <div class="sidebar-content">
+                        <div class="price-bar">
+                            <input type="text" placeholder="0" class="input">
+                            <input type="text" placeholder="200" class="input">
+                        </div>
+                    </div>
+                </div>    
+                <div class="sidebar-item">
+                    <h4 class="sidebar-title">Colors</h4>
+                    <div class="sidebar-content">
+                        <div class="colors">
+                            <div class="color">
+                                <input type="checkbox" class="color-checkbox" id="black" name="black" value="black">
+                                <label for="black" class="color-name">Black</label>
+                            </div>
+                            <div class="color">
+                                <input type="checkbox" class="color-checkbox" id="blue" name="blue" value="blue">
+                                <label for="blue" class="color-name">Blue</label>
+                            </div>
+                            <div class="color">
+                                <input type="checkbox" class="color-checkbox" id="red" name="red" value="red">
+                                <label for="red" class="color-name">Red</label>
+                            </div>
+                            <div class="color">
+                                <input type="checkbox" class="color-checkbox" id="yellow" name="yellow" value="yellow">
+                                <label for="yellow" class="color-name">Yellow</label>
+                            </div>
+                            <div class="color">
+                                <input type="checkbox" class="color-checkbox" id="green" name="green" value="green">
+                                <label for="green" class="color-name">Green</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="button-wrapper">
+                        <button class="button">Apply Filter</button>
+                        <div class="vertical-line"></div>
+                    </div>
+                </div>    
+                <div class="sidebar-item">
+                    <h4 class="sidebar-title">Reviewed By You</h4>
+                    <div class="sidebar-content">
+                        <div class="reviewed-products">
+                            <div class="product">
+                                <div class="image"></div>
+                                <div class="info">
+                                    <p class="name">Retro style handbag</p>
+                                    <div class="price">
+                                        <div class="current-price">$35.99</div>
+                                        <div class="old-price">$52.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <div class="image"></div>
+                                <div class="info">
+                                    <p class="name">Warm casual sweater</p>
+                                    <div class="price">
+                                        <div class="current-price">$35.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product">
+                                <div class="image"></div>
+                                <div class="info">
+                                    <p class="name">Textured turtleneck with zip</p>
+                                    <div class="price">
+                                        <div class="current-price">$35.99</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <img src="./images/season-sale.svg" alt="Season Sale">
+                    </a>
+                </div>    
+            </div>
+            <div class="products-wrapper">
+                <div class="sort-and-count">
+                    <p class="products-count">
+                        There are <span class="bold">67</span> products in this category
+                    </p>
+                    <div class="sort">
+                        <select class="input">
+                            <option value="RELEVANCE">Relevance</option>
+                            <option value="ASC">ASC</option>
+                            <option value="DESC">DESC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products">
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Textured turtleneck with zip</p>
+                            <div class="price">
+                                <div class="current-price">$53.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Spray wrap skirt</p>
+                            <div class="price">
+                                <div class="current-price">$35.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Short shorts with straps</p>
+                            <div class="price">
+                                <div class="current-price">$20.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Fashionee - catton shirt</p>
+                            <div class="price">
+                                <div class="current-price">$110.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Warm casual sweater</p>
+                            <div class="price">
+                                <div class="current-price">$80.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Retro style handbag</p>
+                            <div class="price">
+                                <div class="current-price">$45.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Style Handbag</p>
+                            <div class="price">
+                                <div class="current-price">$180.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Blouse with insert and ruffles</p>
+                            <div class="price">
+                                <div class="current-price">$30.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Long oversized T-shirt</p>
+                            <div class="price">
+                                <div class="current-price">$30.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Stylish and comfortable cap</p>
+                            <div class="price">
+                                <div class="current-price">$40.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">Shoulder bag</p>
+                            <div class="price">
+                                <div class="current-price">$210.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="photo">
+                            <div class="top-bar">
+                                <div class="labels">
+                                    <p class="label sale">
+                                        Sale
+                                    </p>
+                                    <p class="label new">
+                                        New
+                                    </p>
+                                </div>
+                                <div class="favorites">
+                                    <img src="./icons/favorites.svg" alt="favorites">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p class="name">High-heeled shoes</p>
+                            <div class="price">
+                                <div class="current-price">$70.99</div>
+                                <div class="old-price">$52.99</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class="button left">
+                        <img src="./icons/left-pagin-arrow.svg" alt="left-pagin-arrow">
+                    </div>
+                    <div class="pages">
+                        <div class="page active">1</div>
+                        <div class="page">2</div>
+                        <div class="page">3</div>
+                    </div>
+                    <div class="button right">
+                        <img src="./icons/right-pagin-arrow.svg" alt="right-pagin-arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="newsletter">
+        <div class="newsletter-points">
+            <img class="points" src="./icons/vector-points-5.svg" alt="points">
+        </div> 
+        <div class="newsletter-wrapper">
+            <div class="info">
+                <h3 class="title">Newsletter</h3>
+                <p class="description">
+                    Be the first to hear about deals,  offers and upcoming collections.
+                </p>
+            </div>
+            <div class="newsletter-email">
+                <input type="email" name="newsletter-email" class="input" placeholder="Enter your email">
+                <div class="button-wrapper">
+                    <button class="button">
+                        Subscribe 
+                    </button>
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+        </div>   
+    </section> 
+</main>
+
+<div class="advertising-line"></div>
+
+<footer class="footer">
+    <div class="footer-photo-5">
+        <img class="footer-points" src="./icons/vector-points-5.svg" alt="footer-photo">
+        <img class="footer-points-10" src="./icons/vector-points-10.svg" alt="footer-photo">
+    </div>
+    <div class="container">
+        <div class="footer-info">
+            <div class="column column-1">
+                <div class="logo">
+                    <img src="./icons/logo.svg" alt="logo">
+                </div>
+                <p class="about-brand">
+                    Cillum eu id enim aliquip aute ullamco anim. Culpa deserunt nostrud excepteur voluptate.
+                </p>
+                <div class="find-us">
+                    <p class="find-us-text">Find us here:</p>
+                    <ul class="find-us-links">
+                        <li class="find-us-link">
+                            <a href="">FB</a>
+                        </li>
+                        <li class="line"></li>
+                        <li class="find-us-link">
+                            <a href="">TW</a>
+                        </li>
+                        <li class="line"></li>
+                        <li class="find-us-link">
+                            <a href="">INS</a>
+                        </li>
+                        <li class="line"></li>
+                        <li class="find-us-link">
+                            <a href="">PT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column column-2">
+                <h5 class="title">About</h5>
+                <ul class="custom-list">
+                    <li class="item"><a href="">About us</a></li>
+                    <li class="item"><a href="">Collections</a></li>
+                    <li class="item"><a href="">Shop</a></li>
+                    <li class="item"><a href="">Blog</a></li>
+                    <li class="item"><a href="">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="column column-3">
+                <h5 class="title">Useful Links</h5>
+                <ul class="custom-list">
+                    <li class="item"> <a href="">Privacy Policy</a></li>
+                    <li class="item"><a href="">Terms of use</a></li>
+                    <li class="item"><a href="">Support</a></li>
+                    <li class="item"><a href="">Shipping details</a></li>
+                    <li class="item"><a href="">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="column column-4">
+                <h5 class="title">Newsletter</h5>
+                <p class="newsletter-text">
+                    Subscribe to be the first to hear about deals,  offers and upcoming collections.
+                </p>
+                <div class="newsletter-form">
+                    <form action="">
+                        <label>
+                            <input type="email" placeholder="Enter your email" class="input">
+                            <img src="./icons/send.svg" alt="send" class="send-icon">
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>
+                &copy All right reserved. Fashionee 2020
+            </p>
+            <div class="payment-methods-container">
+                <p>Payment methods:</p>
+                <ul class="payment-methods">
+                    <li class="payment-method">
+                        <img src="./icons/visa.svg" alt="visa">
+                    </li>
+                    <li class="payment-method">
+                        <img src="./icons/mastercard.svg" alt="Master Card">
+                    </li>
+                    <li class="payment-method">
+                        <img src="./icons/paypal.svg" alt="PayPal">
+                    </li>
+                    <li class="payment-method">
+                        <img src="./icons/payoneer.svg" alt="Payoneer">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
