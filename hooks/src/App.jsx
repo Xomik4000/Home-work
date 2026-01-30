@@ -1,4 +1,4 @@
-import { use, useState } from 'react'
+import {useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -46,10 +46,14 @@ function App() {
       <button onClick={getPost}>Получить пост</button>
 
       {post && (
-        <div>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
+        post.title ? (
+          <div>
+            <h3>{post.title}</h3>
+            <p>{post.body}</p>
         </div>
+        ) : (
+          <p>Пост не найден</p>
+        )
       )}
     </>
   )
