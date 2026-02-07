@@ -1,5 +1,5 @@
-import heartEmpty from "../../assets/icons/favorites.svg";
-import heartFilled from "../../assets/icons/favorites-filled.svg"
+import heartEmpty from "../../../assets/icons/favorites.svg";
+import heartFilled from "../../../assets/icons/favorites-filled.svg"
 
 
 

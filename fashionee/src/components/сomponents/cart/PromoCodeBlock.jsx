@@ -1,4 +1,4 @@
-import buttonArrow from "../../assets/icons/button-arrow.svg";
+import buttonArrow from "../../../assets/icons/button-arrow.svg";
 
 function PromoCodeBlock() {
   return (

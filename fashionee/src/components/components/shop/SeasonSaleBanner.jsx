@@ -1,4 +1,4 @@
-import saleImage from "../../assets/images/season-sale.svg";
+import saleImage from "../../../assets/images/season-sale.svg";
 
 function SeasonSaleBanner() {
   return (

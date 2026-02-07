@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+} 
+
+.container .input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(68, 68, 68, 20%);
+    color: rgba(68, 68, 68, 50%);
+    outline: none;
+    padding: 0 0px 15px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.container .button-wrapper {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    max-width: 240px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.container .button-wrapper .button {
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    border: none;
+    background: rgba(0, 0, 0, 1);
+    padding: 17px 74px 17px 74px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.container .button-wrapper .vertical-line {
+    width: 2px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+}
+
+.container .price {
+    display: flex;
+    gap: 15px;
+}
+
+.container .price .current-price {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.container .price .old-price {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    text-decoration: line-through;
+    color: rgba(68, 68, 68, 1);
+}
+
+.container .custom-list {
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container .custom-list .item {
+    color: #444444;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+.container .custom-list .item::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-image: url("../assets/icons/square.svg");
+}
+
+.container .custom-list .item.active {
+    color: #FF8E8E;
+}
+
+.container .custom-list .item.active::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-image: url("../assets/icons/small-row.svg");
+}
+
+.container .find-us .find-us-text {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 27px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.container .find-us .find-us-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: rgba(0, 0, 0, 1);
+    list-style-type: none;
+}
+
+.container .find-us .find-us-links .find-us-link a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 14px;
+    color: rgba(68, 68, 68, 1);
+}
+
+.container .find-us .find-us-links .line {
+    border-bottom: 1px solid #444444;
+    height: 1px;
+    width: 10px; 
+}
+
+.advertising-line {
+    margin: 0 auto 110px auto;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(238, 238, 238, 1);
+}

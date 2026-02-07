@@ -1,4 +1,5 @@
 import points from "../assets/icons/points-content.svg";
+import { PAGES } from "../constants";
 
 
 function ContentBlock({ title, page, goToShop, goToCart }) {
@@ -16,14 +17,14 @@ function ContentBlock({ title, page, goToShop, goToCart }) {
                     </div>
                     <div className="menu-item-content">Home</div>
                     <div
-                        className={page === "shop" ? "menu-item-content active" : "menu-item-content"}
+                        className={page === PAGES.SHOP ? "menu-item-content active" : "menu-item-content"}
                         onClick={goToShop}
                         style={{ cursor: "pointer" }}
                     >
                         Shop        
                     </div>
                     <div
-                        className={page === "cart" ? "menu-item-content active" : "menu-item-content"}
+                        className={page ===  PAGES.CART ? "menu-item-content active" : "menu-item-content"}
                         onClick={goToCart}
                         style={{ cursor: "pointer" }}
                     >

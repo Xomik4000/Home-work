@@ -1,7 +1,8 @@
 import Header from '../components/Header';
 import ContentBlock from '../components/ContentBlock';
-import Showcase from '../components/shopComponents/Showcase';
+import Showcase from '../components/components/shop/Showcase.jsx';
 import Footer from '../components/Footer';
+
 
 
 function Shop({ page, goToShop, goToCart, favorites, toggleFavorite, cart, addToCart, decreaseCart, cartCount }) {

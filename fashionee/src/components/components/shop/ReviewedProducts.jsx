@@ -1,4 +1,4 @@
-import { PRODUCTS } from "../../data/products";
+import { PRODUCTS } from "../../../data/products";
 
 const REVIEWED_IDS = [6, 5, 1]
 

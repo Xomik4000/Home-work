@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
-import leftArrow from "../../assets/icons/left-pagin-arrow.svg";
-import rightArrow from "../../assets/icons/right-pagin-arrow.svg";
-import { PRODUCTS } from "../../data/products";
+import leftArrow from "../../../assets/icons/left-pagin-arrow.svg";
+import rightArrow from "../../../assets/icons/right-pagin-arrow.svg";
+import { PRODUCTS } from "../../../data/products";
 
 function ProductsSection({
   favorites,
