@@ -14,7 +14,7 @@ function Header({ goToCart, favorites, cartCount}) {
             <div className="logo-container">
                 <div className="burger-menu">
                     <input type="checkbox" id="burger-checkbox" className="burger-checkbox"/>
-                    <label className="burger" for="burger-checkbox"></label>
+                    <label className="burger" htmlFor="burger-checkbox"></label>
                 </div>
                 <div className="logo">
                     <img src={logo} alt="logo"/>
@@ -55,7 +55,7 @@ function Header({ goToCart, favorites, cartCount}) {
             </div>
             <div className="header-icon" onClick={goToCart} style={{ cursor: 'pointer'}}>
                 <img src={cartIcon} alt="cart"/>
-                <div className="counter">{cartCount > 0 && <div className="counter">{cartCount}</div>}</div>
+                {cartCount > 0 && <div className="counter">{cartCount}</div>}
             </div>
         </div>
     </header>
