@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  padding: 15px;
+}
+
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  gap: 15px;
+  margin: 0 auto 30px auto;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.currentPage {
+  color: red;
+  font-weight: bold;
+}
