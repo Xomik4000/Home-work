@@ -1,9 +1,10 @@
 import ProductCard from "./ProductCard";
 import leftArrow from "../../../assets/icons/left-pagin-arrow.svg";
 import rightArrow from "../../../assets/icons/right-pagin-arrow.svg";
-import { PRODUCTS } from "../../../data/products";
+
 
 function ProductsSection({
+  products,
   favorites,
   toggleFavorite,
   cart,
@@ -14,7 +15,7 @@ function ProductsSection({
     <div className='products-wrapper'>
       <div className='sort-and-count'>
         <p className='products-count'>
-          There are <span className='bold'>67</span> products in this category
+          There are <span className='bold'>{products.length}</span> products in this category
         </p>
         <div className='sort'>
           <select className='input'>
@@ -26,7 +27,7 @@ function ProductsSection({
       </div>
 
       <div className='products'>
-        {PRODUCTS.map((p) => {
+        {products.map((p) => {
           const qty = cart[p.id] || 0;
 
           return (
