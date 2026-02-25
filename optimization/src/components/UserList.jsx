@@ -1,5 +1,6 @@
 import { useState, memo} from 'react'
 
+
 const User = memo(({name}) => {
   console.log('Ререндер:', name);
   return <li>{name}</li>
