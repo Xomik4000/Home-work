@@ -6,23 +6,21 @@ import ColorFilter from "./ColorFilter";
 import ReviewedProducts from "./ReviewedProducts";
 import SeasonSaleBanner from "./SeasonSaleBanner";
 
-
-function SideBar({searchText, onSearchChange, filterOptions, onApply}) {
-
+function SideBar({ searchText, onSearchChange, filterOptions, onApply }) {
   const [draft, setDraft] = useState({
-    category: 'All',
-    priceMin: '',
-    priceMax: '',
-    colors: []
-  })
+    category: "All",
+    priceMin: "",
+    priceMax: "",
+    colors: [],
+  });
 
   return (
-    <aside className='sidebar'>
-      <SearchBar value={searchText} onChange={onSearchChange}/>
-      <Categories 
+    <aside className="sidebar">
+      <SearchBar value={searchText} onChange={onSearchChange} />
+      <Categories
         categories={filterOptions.categories}
         value={draft.category}
-        onChange={(cat) => setDraft((prev) => ({ ...prev, category: cat}))}
+        onChange={(cat) => setDraft((prev) => ({ ...prev, category: cat }))}
       />
       <PriceFilter
         minPlaceholder={filterOptions.minPrice}
@@ -32,7 +30,7 @@ function SideBar({searchText, onSearchChange, filterOptions, onApply}) {
         onChangeMin={(v) => setDraft((prev) => ({ ...prev, priceMin: v }))}
         onChangeMax={(v) => setDraft((prev) => ({ ...prev, priceMax: v }))}
       />
-      <ColorFilter 
+      <ColorFilter
         colors={filterOptions.colors}
         selected={draft.colors}
         onToggleColor={(color) =>
@@ -40,15 +38,23 @@ function SideBar({searchText, onSearchChange, filterOptions, onApply}) {
             const has = prev.colors.includes(color);
             return {
               ...prev,
-              colors: has ? prev.colors.filter((c) => c !== color) : [...prev.colors, color]
-            }
+              colors: has
+                ? prev.colors.filter((c) => c !== color)
+                : [...prev.colors, color],
+            };
           })
         }
       />
-      <div className='sidebar-item'>
-        <div className='button-wrapper'>
-          <button className='button' type="button" onClick={() => onApply(draft)}>Apply Filter</button>
-          <div className='vertical-line'></div>
+      <div className="sidebar-item">
+        <div className="button-wrapper">
+          <button
+            className="button"
+            type="button"
+            onClick={() => onApply(draft)}
+          >
+            Apply Filter
+          </button>
+          <div className="vertical-line"></div>
         </div>
       </div>
       <ReviewedProducts />

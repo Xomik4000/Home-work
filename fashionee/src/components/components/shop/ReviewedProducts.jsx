@@ -1,17 +1,17 @@
 import { PRODUCTS } from "../../../data/products";
 
-const REVIEWED_IDS = [6, 5, 1]
+const REVIEWED_IDS = [6, 5, 1];
 
 function ReviewedProducts() {
-  const reviewed = REVIEWED_IDS
-    .map((id) => PRODUCTS.find((p) => p.id === id))
-    .filter(Boolean)
+  const reviewed = REVIEWED_IDS.map((id) =>
+    PRODUCTS.find((p) => p.id === id),
+  ).filter(Boolean);
 
   return (
-    <div className='sidebar-item'>
-      <h4 className='sidebar-title'>Reviewed By You</h4>
-      <div className='sidebar-content'>
-        <div className='reviewed-products'>
+    <div className="sidebar-item">
+      <h4 className="sidebar-title">Reviewed By You</h4>
+      <div className="sidebar-content">
+        <div className="reviewed-products">
           {reviewed.map((p) => (
             <div className="product" key={p.id}>
               <div className="image">

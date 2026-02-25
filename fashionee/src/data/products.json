@@ -7,11 +7,9 @@
       "oldPrice": 53.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Brown",
-      "image":"https://fs-thb01.getcourse.ru/fileservice/file/thumbnail/h/54cdbf69f8e60ba13e2e795cd495567f.png/s/f1200x/a/534336/sc/265"
+      "image": "https://fs-thb01.getcourse.ru/fileservice/file/thumbnail/h/54cdbf69f8e60ba13e2e795cd495567f.png/s/f1200x/a/534336/sc/265"
     },
     {
       "id": 2,
@@ -20,9 +18,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Red",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/061c4e0891851d157cbcf6984295b7ed.png/s/f1200x/a/534336/sc/111"
     },
@@ -33,9 +29,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Blue",
       "image": "https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/b56c73f8da5404fddf58b7a5a540130f.png/s/f1200x/a/534336/sc/238"
     },
@@ -46,9 +40,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Brown",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/911e17505fb10478ce04f078943bf74e.png/s/f1200x/a/534336/sc/55"
     },
@@ -59,9 +51,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": true,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Brown",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/ec9bc0e735f3c75eab9d4d8c4f8630fe.png/s/f1200x/a/534336/sc/400"
     },
@@ -72,10 +62,7 @@
       "oldPrice": 52.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Women",
-        "Accessories"
-      ],
+      "categories": ["Women", "Accessories"],
       "color": "Brown",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/c3d454c3b46f6a62d4d036f928a56705.png/s/f1200x/a/534336/sc/100"
     },
@@ -86,10 +73,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Women",
-        "Accessories"
-      ],
+      "categories": ["Women", "Accessories"],
       "color": "Black",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/14e10d5f0aaf5e8405fad852e8344182.png/s/f1200x/a/534336/sc/138"
     },
@@ -100,9 +84,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": true,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Blue",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/2b269ee1c83fd5758f3763f9a45a5605.png/s/f1200x/a/534336/sc/116"
     },
@@ -113,9 +95,7 @@
       "oldPrice": 52.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Blue",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/92be8394b48b6911690745902643f92d.png/s/f1200x/a/534336/sc/439"
     },
@@ -126,9 +106,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Accessories"
-      ],
+      "categories": ["Accessories"],
       "color": "White",
       "image": "https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/aa0d17c1bd58fc6066aa1f602fe8ab59.png/s/f1200x/a/534336/sc/325"
     },
@@ -139,10 +117,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": true,
-      "categories": [
-        "Women",
-        "Accessories"
-      ],
+      "categories": ["Women", "Accessories"],
       "color": "Red",
       "image": "https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/ad5a7f75f7e3463aaafec1149cd2bfbd.png/s/f1200x/a/534336/sc/477"
     },
@@ -153,9 +128,7 @@
       "oldPrice": 70.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Black",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/b14b37c5f1fbd94505697d827305348b.png/s/f1200x/a/534336/sc/57"
     },
@@ -166,9 +139,7 @@
       "oldPrice": 53.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Brown",
       "image": "https://fs-thb01.getcourse.ru/fileservice/file/thumbnail/h/54cdbf69f8e60ba13e2e795cd495567f.png/s/f1200x/a/534336/sc/265"
     },
@@ -179,9 +150,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Red",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/061c4e0891851d157cbcf6984295b7ed.png/s/f1200x/a/534336/sc/111"
     },
@@ -192,9 +161,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Blue",
       "image": "https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/b56c73f8da5404fddf58b7a5a540130f.png/s/f1200x/a/534336/sc/238"
     },
@@ -205,9 +172,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Brown",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/911e17505fb10478ce04f078943bf74e.png/s/f1200x/a/534336/sc/55"
     },
@@ -218,9 +183,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": true,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Brown",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/ec9bc0e735f3c75eab9d4d8c4f8630fe.png/s/f1200x/a/534336/sc/400"
     },
@@ -231,10 +194,7 @@
       "oldPrice": 52.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Women",
-        "Accessories"
-      ],
+      "categories": ["Women", "Accessories"],
       "color": "Brown",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/c3d454c3b46f6a62d4d036f928a56705.png/s/f1200x/a/534336/sc/100"
     },
@@ -245,10 +205,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Women",
-        "Accessories"
-      ],
+      "categories": ["Women", "Accessories"],
       "color": "Black",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/14e10d5f0aaf5e8405fad852e8344182.png/s/f1200x/a/534336/sc/138"
     },
@@ -259,9 +216,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": true,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Blue",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/2b269ee1c83fd5758f3763f9a45a5605.png/s/f1200x/a/534336/sc/116"
     },
@@ -272,9 +227,7 @@
       "oldPrice": 52.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Men"
-      ],
+      "categories": ["Men"],
       "color": "Blue",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/92be8394b48b6911690745902643f92d.png/s/f1200x/a/534336/sc/439"
     },
@@ -285,9 +238,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": false,
-      "categories": [
-        "Accessories"
-      ],
+      "categories": ["Accessories"],
       "color": "White",
       "image": "https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/aa0d17c1bd58fc6066aa1f602fe8ab59.png/s/f1200x/a/534336/sc/325"
     },
@@ -298,10 +249,7 @@
       "oldPrice": null,
       "isSale": false,
       "isNew": true,
-      "categories": [
-        "Women",
-        "Accessories"
-      ],
+      "categories": ["Women", "Accessories"],
       "color": "Red",
       "image": "https://fs-thb02.getcourse.ru/fileservice/file/thumbnail/h/ad5a7f75f7e3463aaafec1149cd2bfbd.png/s/f1200x/a/534336/sc/477"
     },
@@ -312,9 +260,7 @@
       "oldPrice": 70.99,
       "isSale": true,
       "isNew": false,
-      "categories": [
-        "Women"
-      ],
+      "categories": ["Women"],
       "color": "Black",
       "image": "https://fs-thb03.getcourse.ru/fileservice/file/thumbnail/h/b14b37c5f1fbd94505697d827305348b.png/s/f1200x/a/534336/sc/57"
     }

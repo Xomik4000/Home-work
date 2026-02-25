@@ -2,7 +2,6 @@ import ProductCard from "./ProductCard";
 import leftArrow from "../../../assets/icons/left-pagin-arrow.svg";
 import rightArrow from "../../../assets/icons/right-pagin-arrow.svg";
 
-
 function ProductsSection({
   products,
   favorites,
@@ -12,21 +11,22 @@ function ProductsSection({
   decreaseCart,
 }) {
   return (
-    <div className='products-wrapper'>
-      <div className='sort-and-count'>
-        <p className='products-count'>
-          There are <span className='bold'>{products.length}</span> products in this category
+    <div className="products-wrapper">
+      <div className="sort-and-count">
+        <p className="products-count">
+          There are <span className="bold">{products.length}</span> products in
+          this category
         </p>
-        <div className='sort'>
-          <select className='input'>
-            <option value='RELEVANCE'>Relevance</option>
-            <option value='ASC'>ASC</option>
-            <option value='DESC'>DESC</option>
+        <div className="sort">
+          <select className="input">
+            <option value="RELEVANCE">Relevance</option>
+            <option value="ASC">ASC</option>
+            <option value="DESC">DESC</option>
           </select>
         </div>
       </div>
 
-      <div className='products'>
+      <div className="products">
         {products.map((p) => {
           const qty = cart[p.id] || 0;
 
@@ -43,17 +43,17 @@ function ProductsSection({
           );
         })}
       </div>
-      <div className='pagination'>
-        <div className='button left'>
-          <img src={leftArrow} alt='left-pagin-arrow' />
+      <div className="pagination">
+        <div className="button left">
+          <img src={leftArrow} alt="left-pagin-arrow" />
         </div>
-        <div className='pages'>
-          <div className='page active'>1</div>
-          <div className='page'>2</div>
-          <div className='page'>3</div>
+        <div className="pages">
+          <div className="page active">1</div>
+          <div className="page">2</div>
+          <div className="page">3</div>
         </div>
-        <div className='button right'>
-          <img src={rightArrow} alt='right-pagin-arrow' />
+        <div className="button right">
+          <img src={rightArrow} alt="right-pagin-arrow" />
         </div>
       </div>
     </div>

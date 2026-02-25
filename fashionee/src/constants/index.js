@@ -1,9 +1,9 @@
 export const LS_KEYS = {
-    FAVORITES: "favorites",
-    CART: "cart"
-}
+  FAVORITES: "favorites",
+  CART: "cart",
+};
 
 export const PAGES = {
-    SHOP: "shop",
-    CART: "cart"
-}
+  SHOP: "shop",
+  CART: "cart",
+};

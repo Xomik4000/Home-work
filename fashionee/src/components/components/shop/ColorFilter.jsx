@@ -1,16 +1,16 @@
-function ColorFilter({colors, selected, onToggleColor}) {
+function ColorFilter({ colors, selected, onToggleColor }) {
   return (
-    <div className='sidebar-item'>
-      <h4 className='sidebar-title'>Colors</h4>
-      <div className='sidebar-content'>
-        <div className='colors'>
+    <div className="sidebar-item">
+      <h4 className="sidebar-title">Colors</h4>
+      <div className="sidebar-content">
+        <div className="colors">
           {colors.map((color) => {
             const id = `color-${color.toLowerCase()}`;
             const checked = selected.includes(color);
 
             return (
               <div className="color" key={color}>
-                <input 
+                <input
                   type="checkbox"
                   className="color-checkbox"
                   id={id}
@@ -21,7 +21,7 @@ function ColorFilter({colors, selected, onToggleColor}) {
                   {color}
                 </label>
               </div>
-            )
+            );
           })}
         </div>
       </div>
