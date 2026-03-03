@@ -12,7 +12,7 @@ function App() {
       <LoginForm />
       <RenderCounter />
       <button onClick={() => setCount(count + 1)}>Увеличить</button>
-      <CustomButton ref={buttonRef} />;
+      <CustomButton ref={buttonRef} />
     </>
   );
 }
