@@ -1,0 +1,21 @@
+import React from 'react'
+import { TodoList } from './components/TodoList'
+import { Posts } from './components/Posts'
+import './App.css'
+
+function App() {
+
+  return (
+      <div className='App'>
+        <h1 className='title'>Посты</h1>
+        <div className='wrapper'>
+          <TodoList />
+          <div className='content'>
+            <Posts />
+          </div>
+        </div>
+      </div>
+  )
+}
+
+export default App

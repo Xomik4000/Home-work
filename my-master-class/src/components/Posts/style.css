@@ -1,0 +1,25 @@
+.posts {
+  height: 300px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 800px;
+}
+
+.pagination {
+  display: flex;
+  gap: 15px;
+}
+
+.pagination-item {
+  cursor: pointer;
+}
+
+.pagination-item:hover {
+  color: red;
+}
+
+.active {
+  color: green;
+}

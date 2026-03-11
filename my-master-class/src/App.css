@@ -1,0 +1,19 @@
+.App {
+  padding: 15px;
+}
+
+.title {
+  text-align: center;
+}
+
+.wrapper {
+   display: flex;
+   gap: 15px;
+   justify-content: space-around ;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
