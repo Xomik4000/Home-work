@@ -434,6 +434,11 @@
   opacity: 0.5;
   width: 10px;
   text-align: center;
+  cursor: pointer;
+}
+
+.shop .products-wrapper .pagination .pages .page:hover {
+  border-color: #ff4f8b;
 }
 
 .shop .products-wrapper .pagination .pages .page.active {
@@ -599,6 +604,44 @@
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+}
+
+.sort .input {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #e5e5e5;
+  background: white;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.sort-and-count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.products-count {
+  font-size: 14px;
+  color: #666;
+}
+
+.products-count .bold {
+  font-weight: 600;
+  color: #000;
+}
+
+.no-products {
+  text-align: center;
+  padding: 40px;
+  color: #888;
 }
 
 @media screen and (max-width: 1760px) {

@@ -3,6 +3,8 @@ import Sidebar from "./SideBar";
 import ProductsSection from "./ProductsSection";
 import { PRODUCTS } from "../../../data/products";
 
+const PRODUCTS_PER_PAGE = 6;
+
 function Showcase({
   favorites,
   toggleFavorite,
@@ -13,17 +15,24 @@ function Showcase({
   const [searchText, setSearchText] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  useEffect(() => {
-    const t = setTimeout(() => setDebouncedSearch(searchText), 400);
-    return () => clearTimeout(t);
-  }, [searchText]);
-
   const [applied, setApplied] = useState({
     category: "All",
     priceMin: "",
     priceMax: "",
     colors: [],
   });
+
+  const [sortType, setSortType] = useState("relevance");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(searchText), 400);
+    return () => clearTimeout(t);
+  }, [searchText]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [debouncedSearch, applied, sortType]);
 
   const categories = ["All"];
   const colors = [];
@@ -57,6 +66,7 @@ function Showcase({
       return false;
 
     const price = Number(p.price) || 0;
+
     if (applied.priceMin !== "" && price < Number(applied.priceMin))
       return false;
     if (applied.priceMax !== "" && price > Number(applied.priceMax))
@@ -64,6 +74,26 @@ function Showcase({
 
     return true;
   });
+
+  let sortedProducts = [...filteredProducts];
+
+  if (sortType === "name") {
+    sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  if (sortType === "price") {
+    sortedProducts.sort((a, b) => a.price - b.price);
+  }
+
+  const totalPages = Math.ceil(sortedProducts.length / PRODUCTS_PER_PAGE);
+
+  const safeCurrentPage =
+    totalPages === 0 ? 1 : Math.min(currentPage, totalPages);
+
+  const startIndex = (safeCurrentPage - 1) * PRODUCTS_PER_PAGE;
+  const endIndex = startIndex + PRODUCTS_PER_PAGE;
+
+  const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
   return (
     <section className="container">
@@ -80,7 +110,13 @@ function Showcase({
           onApply={(draft) => setApplied(draft)}
         />
         <ProductsSection
-          products={filteredProducts}
+          products={currentProducts}
+          totalCount={sortedProducts.length}
+          sortType={sortType}
+          onSortChange={setSortType}
+          currentPage={safeCurrentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
           favorites={favorites}
           toggleFavorite={toggleFavorite}
           cart={cart}
