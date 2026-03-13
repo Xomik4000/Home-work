@@ -95,7 +95,8 @@ function Showcase({
 
   const totalPages = Math.ceil(sortedProducts.length / PRODUCTS_PER_PAGE);
 
-  const safeCurrentPage = totalPages === 0 ? 1 : Math.min(currentPage, totalPages);
+  const safeCurrentPage =
+    totalPages === 0 ? 1 : Math.min(currentPage, totalPages);
 
   const handlePageChange = (page) => {
     if (page < 1) return;
@@ -109,8 +110,8 @@ function Showcase({
   const currentProducts = sortedProducts.slice(startIndex, endIndex);
 
   return (
-    <section className="container">
-      <div className="shop">
+    <section className='container'>
+      <div className='shop'>
         <Sidebar
           searchText={searchText}
           onSearchChange={setSearchText}
