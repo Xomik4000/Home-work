@@ -10,25 +10,36 @@ function Pagination({ currentPage, totalPages, onPageChange }) {
   }
 
   return (
-    <div className="pagination">
-      <div className="button" onClick={() => onPageChange(currentPage - 1)}>
-        <img src={leftArrow} alt="left" />
+    <div className='pagination'>
+      <div
+        className={`button left ${currentPage === 1 ? "disabled" : ""}`}
+        onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
+        style={{ cursor: currentPage === 1 ? "default" : "pointer" }}
+      >
+        <img src={leftArrow} alt='left-pagin-arrow' />
       </div>
 
-      <div className="pages">
+      <div className='pages'>
         {pages.map((page) => (
           <div
             key={page}
             className={page === currentPage ? "page active" : "page"}
             onClick={() => onPageChange(page)}
+            style={{ cursor: "pointer" }}
           >
             {page}
           </div>
         ))}
       </div>
 
-      <div className="button" onClick={() => onPageChange(currentPage + 1)}>
-        <img src={rightArrow} alt="right" />
+      <div
+        className={`button right ${currentPage === totalPages ? "disabled" : ""}`}
+        onClick={() =>
+          currentPage < totalPages && onPageChange(currentPage + 1)
+        }
+        style={{ cursor: currentPage === totalPages ? "default" : "pointer" }}
+      >
+        <img src={rightArrow} alt='right-pagin-arrow' />
       </div>
     </div>
   );
