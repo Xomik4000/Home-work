@@ -77,18 +77,31 @@ function Showcase({
 
   let sortedProducts = [...filteredProducts];
 
-  if (sortType === "name") {
+  if (sortType === "name-asc") {
     sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  if (sortType === "price") {
+  if (sortType === "name-desc") {
+    sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+  }
+
+  if (sortType === "price-asc") {
     sortedProducts.sort((a, b) => a.price - b.price);
+  }
+
+  if (sortType === "price-desc") {
+    sortedProducts.sort((a, b) => b.price - a.price);
   }
 
   const totalPages = Math.ceil(sortedProducts.length / PRODUCTS_PER_PAGE);
 
-  const safeCurrentPage =
-    totalPages === 0 ? 1 : Math.min(currentPage, totalPages);
+  const safeCurrentPage = totalPages === 0 ? 1 : Math.min(currentPage, totalPages);
+
+  const handlePageChange = (page) => {
+    if (page < 1) return;
+    if (page > totalPages) return;
+    setCurrentPage(page);
+  };
 
   const startIndex = (safeCurrentPage - 1) * PRODUCTS_PER_PAGE;
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
@@ -116,7 +129,7 @@ function Showcase({
           onSortChange={setSortType}
           currentPage={safeCurrentPage}
           totalPages={totalPages}
-          onPageChange={setCurrentPage}
+          onPageChange={handlePageChange}
           favorites={favorites}
           toggleFavorite={toggleFavorite}
           cart={cart}
