@@ -231,10 +231,31 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 3px 7px;
-  border: 1px solid rgba(68, 68, 68, 10%);
-  color: rgba(68, 68, 68, 10%);
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(68, 68, 68, 0.2);
+  border-radius: 50%;
+  background: #fff;
+  color: #444444;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cart .order-wrapper .product-list .product .product-info .close:hover {
+  transform: scale(1.08) rotate(90deg);
+  background-color: #444444;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(68, 68, 68, 0.18);
+}
+
+.cart .order-wrapper .product-list .product .product-info .close:active {
+  transform: scale(0.95);
 }
 
 .cart .order-wrapper .order {
