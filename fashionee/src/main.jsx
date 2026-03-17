@@ -2,11 +2,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 
-import "./index.css";
-import "./styles/header.css";
-import "./styles/footer.css";
-import "./styles/shop.css";
-import "./styles/cart.css";
+import "./index.scss";
+import "./styles/header.scss";
+import "./styles/footer.scss";
+import "./styles/shop.scss";
+import "./styles/cart.scss";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

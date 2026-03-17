@@ -21,10 +21,13 @@ function CartShowcase({
     }, 0);
   }, [cart, products]);
 
+  const isCartEmpty = Object.keys(cart).length === 0;
   const discountPercent = isPromoApplied ? 10 : 0;
   const discountAmount = orderPrice * 0.1;
-  const delivery = 15;
-  const total = orderPrice - (isPromoApplied ? discountAmount : 0) + delivery;
+  const delivery = isCartEmpty ? 0 : 15;
+  const total = isCartEmpty
+    ? 0
+    : orderPrice - (isPromoApplied ? discountAmount : 0) + delivery;
 
   const handleApplyPromo = () => {
     setIsPromoApplied(promoCode.trim().toLowerCase() === "ilovereact");

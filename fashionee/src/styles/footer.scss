@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 .footer .footer-photo-5 {
   position: relative;
 }
@@ -16,6 +18,8 @@
 
 .footer .footer-info {
   display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   margin: 0 0 90px 0;
 }
 
@@ -29,6 +33,7 @@
 
 .footer .footer-info .column.column-1 {
   max-width: 331px;
+  width: 100%;
   margin: 0 60px 0 0;
 }
 
@@ -68,6 +73,7 @@
 
 .footer .footer-info .column.column-4 {
   max-width: 361px;
+  width: 100%;
 }
 
 .footer .footer-info .column.column-4 .title {
@@ -129,17 +135,19 @@
   font-weight: 400;
   line-height: 24px;
   color: rgba(68, 68, 68, 1);
+  flex-wrap: wrap;
 }
 
 .footer .copyright .payment-methods-container .payment-methods {
   display: flex;
   gap: 8px;
   list-style-type: none;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@include laptop {
   .footer .footer-info {
-    margin: 0 10px 90px 10px;
+    gap: 24px;
   }
 
   .footer .footer-info .column.column-1 {
@@ -147,10 +155,81 @@
   }
 
   .footer .footer-info .column.column-2 {
-    margin-right: 45px;
+    margin-right: 40px;
   }
 
-  .footer .footer-info .column.column-2 {
-    margin-right: 45px;
+  .footer .footer-info .column.column-3 {
+    margin-right: 20px;
+  }
+}
+
+@include tablet {
+  .footer .footer-photo-5 .footer-points,
+  .footer .footer-photo-5 .footer-points-10 {
+    display: none;
+  }
+
+  .footer .footer-info {
+    margin: 0 0 70px 0;
+    gap: 24px 30px;
+  }
+
+  .footer .footer-info .column.column-1,
+  .footer .footer-info .column.column-2,
+  .footer .footer-info .column.column-3,
+  .footer .footer-info .column.column-4 {
+    margin-right: 0;
+    max-width: calc(50% - 15px);
+    width: 100%;
+  }
+}
+
+@include tablet-sm {
+  .footer .footer-info {
+    margin: 0 0 56px 0;
+    gap: 24px;
+  }
+
+  .footer .footer-info .column.column-1,
+  .footer .footer-info .column.column-2,
+  .footer .footer-info .column.column-3,
+  .footer .footer-info .column.column-4 {
+    max-width: 100%;
+  }
+
+  .footer .copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@include mobile {
+  .footer .footer-info {
+    margin: 0 0 40px 0;
+    gap: 20px;
+  }
+
+  .footer .footer-info .column .title,
+  .footer .footer-info .column .title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .footer .footer-info .column .about-brand,
+  .footer .footer-info .column .custom-list a,
+  .footer .footer-info .column .custom-list a,
+  .footer .footer-info .column.column-4 .newsletter-text,
+  .footer .copyright,
+  .footer .copyright .payment-methods-container {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .footer .footer-info .column.column-4 .newsletter-text {
+    margin-bottom: 24px;
+  }
+
+  .footer .copyright {
+    padding-top: 18px;
   }
 }
