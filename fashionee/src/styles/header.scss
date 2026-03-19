@@ -9,163 +9,151 @@
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-}
 
-.header .left-side {
-  display: flex;
-  gap: 65px;
-  align-items: center;
-  min-width: 0;
-}
+  .left-side {
+    display: flex;
+    gap: 65px;
+    align-items: center;
+    min-width: 0;
 
-.header .left-side .logo-container {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-shrink: 0;
-}
+    .logo-container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-shrink: 0;
 
-.header .left-side .logo-container .burger-menu .burger-checkbox {
-  position: absolute;
-  visibility: hidden;
-}
+      .burger-menu {
+        .burger-checkbox {
+          position: absolute;
+          visibility: hidden;
+        }
 
-.header .left-side .logo-container .burger-menu .burger {
-  cursor: pointer;
-  display: block;
-  position: relative;
-  border: none;
-  background: transparent;
-  width: 22px;
-  height: 14px;
-}
+        .burger {
+          cursor: pointer;
+          display: block;
+          position: relative;
+          border: none;
+          background: transparent;
+          width: 22px;
+          height: 14px;
 
-.header .left-side .logo-container .burger-menu .burger::before,
-.header .left-side .logo-container .burger-menu .burger::after {
-  content: "";
-  left: 0;
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  border-radius: 10px;
-  background: #000;
-}
+          &::before,
+          &::after {
+            content: "";
+            left: 0;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            border-radius: 10px;
+            background: #000;
+          }
 
-.header .left-side .logo-container .burger-menu .burger::before {
-  top: 0;
-  box-shadow: 0 11px 0 #000;
-  transition:
-    box-shadow 0.3s 0.15s,
-    top 0.3s 0.15s,
-    transform 0.3s;
-}
+          &::before {
+            top: 0;
+            box-shadow: 0 11px 0 #000;
+            transition:
+              box-shadow 0.3s 0.15s,
+              top 0.3s 0.15s,
+              transform 0.3s;
+          }
 
-.header .left-side .logo-container .burger-menu .burger::after {
-  bottom: 6.5px;
-  transition:
-    bottom 0.3s 0.15s,
-    transform 0.3s;
-}
+          &::after {
+            bottom: 6.5px;
+            transition:
+              bottom 0.3s 0.15s,
+              transform 0.3s;
+          }
+        }
 
-.header
-  .left-side
-  .logo-container
-  .burger-menu
-  .burger-checkbox:checked
-  + .burger::before {
-  top: 2px;
-  transform: rotate(45deg);
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
-  transition:
-    box-shadow 0.15s,
-    top 0.3s,
-    transform 0.3s 0.15s;
-}
+        .burger-checkbox:checked + .burger {
+          &::before {
+            top: 2px;
+            transform: rotate(45deg);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+            transition:
+              box-shadow 0.15s,
+              top 0.3s,
+              transform 0.3s 0.15s;
+          }
 
-.header
-  .left-side
-  .logo-container
-  .burger-menu
-  .burger-checkbox:checked
-  + .burger::after {
-  bottom: 10px;
-  transform: rotate(-45deg);
-  transition:
-    bottom 0.3s,
-    transform 0.3s 0.15s;
-}
+          &::after {
+            bottom: 10px;
+            transform: rotate(-45deg);
+            transition:
+              bottom 0.3s,
+              transform 0.3s 0.15s;
+          }
+        }
+      }
 
-.header .left-side .logo-container .logo {
-  display: flex;
-}
+      .logo {
+        display: flex;
+      }
+    }
 
-.header .left-side .menu {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  min-width: 0;
-}
+    .menu {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      min-width: 0;
 
-.header .left-side .menu .menu-item {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  white-space: nowrap;
-}
+      .menu-item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+        white-space: nowrap;
 
-.header .left-side .menu .menu-item .arrow-hover {
-  display: none;
-}
+        .arrow-hover {
+          display: none;
+        }
 
-.header .left-side .menu .menu-item.active,
-.header .left-side .menu .menu-item:hover {
-  color: #ff8e8e;
-}
+        &.active,
+        &:hover {
+          color: $color-accent;
+        }
 
-.header .left-side .menu .menu-item.active .arrow-default {
-  display: none;
-}
+        &.active .arrow-default,
+        &:hover .arrow-default {
+          display: none;
+        }
 
-.header .left-side .menu .menu-item.active .arrow-hover {
-  display: inline-block;
-}
+        &.active .arrow-hover,
+        &:hover .arrow-hover {
+          display: inline-block;
+        }
+      }
+    }
+  }
 
-.header .left-side .menu .menu-item:hover .arrow-hover {
-  display: inline-block;
-}
+  .right-side {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
-.header .left-side .menu .menu-item:hover .arrow-default {
-  display: none;
-}
+    .header-icon {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
 
-.header .right-side {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.header .right-side .header-icon {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-}
-
-.header .right-side .header-icon .counter {
-  background: black;
-  color: white;
-  border-radius: 50%;
-  padding: 3px 7px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 14px;
+      .counter {
+        background: black;
+        color: white;
+        border-radius: 50%;
+        padding: 3px 7px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1650px) {
@@ -178,22 +166,22 @@
   .header {
     padding-inline: 16px;
     gap: 20px;
-  }
 
-  .header .left-side {
-    gap: 28px;
-  }
+    .left-side {
+      gap: 28px;
 
-  .header .left-side .logo-container {
-    gap: 20px;
-  }
+      .logo-container {
+        gap: 20px;
+      }
 
-  .header .left-side .menu {
-    gap: 24px;
-  }
+      .menu {
+        gap: 24px;
+      }
+    }
 
-  .header .right-side {
-    gap: 20px;
+    .right-side {
+      gap: 20px;
+    }
   }
 }
 
@@ -202,23 +190,23 @@
     margin: 40px auto 80px auto;
     padding-inline: 14px;
     align-items: flex-start;
-  }
 
-  .header .left-side {
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+    .left-side {
+      gap: 16px;
+      flex-wrap: wrap;
 
-  .header .left-side .logo-container {
-    gap: 14px;
-  }
+      .logo-container {
+        gap: 14px;
+      }
 
-  .header .left-side .menu {
-    gap: 16px;
-  }
+      .menu {
+        gap: 16px;
+      }
+    }
 
-  .header .right-side {
-    gap: 14px;
+    .right-side {
+      gap: 14px;
+    }
   }
 }
 
@@ -228,29 +216,29 @@
     padding-inline: 12px;
     flex-wrap: wrap;
     align-items: center;
-  }
 
-  .header .left-side {
-    width: 100%;
-    justify-content: space-between;
-    gap: 12px;
-  }
+    .left-side {
+      width: 100%;
+      justify-content: space-between;
+      gap: 12px;
 
-  .header .left-side .menu {
-    width: 100%;
-    order: 3;
-    gap: 12px 16px;
-  }
+      .menu {
+        width: 100%;
+        order: 3;
+        gap: 12px 16px;
 
-  .header .left-side .menu .menu-item {
-    font-size: 13px;
-    line-height: 15px;
-  }
+        .menu-item {
+          font-size: 13px;
+          line-height: 15px;
+        }
+      }
+    }
 
-  .header .right-side {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 12px 18px;
+    .right-side {
+      width: 100%;
+      justify-content: flex-start;
+      gap: 12px 18px;
+    }
   }
 }
 
@@ -259,28 +247,32 @@
     margin: 20px auto 40px auto;
     padding-inline: 10px;
     gap: 12px;
-  }
 
-  .header .left-side .logo-container {
-    gap: 10px;
-  }
+    .left-side {
+      .logo-container {
+        gap: 10px;
+      }
 
-  .header .left-side .menu {
-    gap: 10px 12px;
-  }
+      .menu {
+        gap: 10px 12px;
 
-  .header .left-side .menu .menu-item {
-    font-size: 12px;
-    line-height: 14px;
-  }
+        .menu-item {
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
 
-  .header .right-side {
-    gap: 10px 14px;
-  }
+    .right-side {
+      gap: 10px 14px;
 
-  .header .right-side .header-icon .counter {
-    font-size: 12px;
-    line-height: 12px;
-    padding: 3px 6px;
+      .header-icon {
+        .counter {
+          font-size: 12px;
+          line-height: 12px;
+          padding: 3px 6px;
+        }
+      }
+    }
   }
 }
