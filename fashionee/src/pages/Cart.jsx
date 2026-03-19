@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import ContentBlock from "../components/ContentBlock";
 import Footer from "../components/Footer";
-import CartShowcase from "../components/сomponents/cart/CartShowcase.jsx";
+import CartShowcase from "../components/cart/CartShowcase.jsx";
 
 function Cart({
   page,

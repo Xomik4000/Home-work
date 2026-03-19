@@ -1,5 +1,5 @@
-import leftArrow from "../../../assets/icons/left-pagin-arrow.svg";
-import rightArrow from "../../../assets/icons/right-pagin-arrow.svg";
+import leftArrow from "../../assets/icons/left-pagin-arrow.svg";
+import rightArrow from "../../assets/icons/right-pagin-arrow.svg";
 
 function Pagination({ currentPage, totalPages, onPageChange }) {
   if (totalPages <= 1) return null;

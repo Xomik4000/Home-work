@@ -1,9 +1,8 @@
-import { PRODUCTS } from "../../../data/products";
-
-const REVIEWED_IDS = [6, 5, 1];
+import { PRODUCTS } from "../../data/products";
+import { REVIEWED_PRODUCT_IDS } from "../../constants";
 
 function ReviewedProducts() {
-  const reviewed = REVIEWED_IDS.map((id) =>
+  const reviewed = REVIEWED_PRODUCT_IDS.map((id) =>
     PRODUCTS.find((p) => p.id === id),
   ).filter(Boolean);
 
