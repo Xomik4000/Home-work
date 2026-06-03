@@ -41,30 +41,30 @@ manager.showSalary(); //Первое задание
 
 abstract class Employee1 {
   abstract calculateSalary(
-    salary: number,
+    rate: number,
     months?: number,
-    watch?: number,
+    hours?: number,
   ): void;
 }
 
-class FullTimeEmployeel extends Employee1 {
-  calculateSalary(salary: number, months: number): void {
+class FullTimeEmployee extends Employee1 {
+  calculateSalary(rate: number, months: number): void {
     console.log(
-      `За ${months} месяцев работы, зарплата составит ${salary * months}`,
+      `За ${months} месяцев работы, зарплата составит ${rate * months}`,
     );
   }
 }
 
 class Freelancer extends Employee1 {
-  calculateSalary(salary: number, watch: number): void {
+  calculateSalary(rate: number, hours: number): void {
     console.log(
-      `За ${watch} часов работы, фрилансер заработает ${salary * watch} рублей`,
+      `За ${hours} часов работы, фрилансер заработает ${rate * hours} рублей`,
     );
   }
 }
 
-const fullTimeEmployeel = new FullTimeEmployeel();
-fullTimeEmployeel.calculateSalary(120000, 6)
+const fullTimeEmployee = new FullTimeEmployee();
+fullTimeEmployee.calculateSalary(120000, 6)
 
 const freelancer = new Freelancer();
 freelancer.calculateSalary(1000, 12); //Второе задание
