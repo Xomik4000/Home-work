@@ -33,7 +33,7 @@ function EventSection({
           rel="noreferrer"
           className="section__button"
         >
-          📍 Как добраться
+           Как добраться
         </a>
       )}
     </section>

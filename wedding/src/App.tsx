@@ -5,7 +5,7 @@ import WeddingCalendar from "./components/WeddingCalendar";
 import Footer from "./components/Footer";
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import Timeline from "./components/Timeline";
-import hallImage from "./assets/ekaterininsky-hall.png";
+import hallImage from "./assets/ekaterininsky-hall.jpeg";
 import "./App.css";
 
 function App() {
@@ -19,7 +19,9 @@ function App() {
         <h1 className="hero__title">Саша & Настя</h1>
 
         <p className="hero__date">02 октября 2026</p>
-
+        <p className="hero__text">
+          С любовью приглашаем вас разделить этот особенный день вместе с нами
+        </p>
         <div className="hero__divider"></div>
       </main>
       <AnimateOnScroll>
@@ -27,8 +29,15 @@ function App() {
       </AnimateOnScroll>
       <Divider />
       <AnimateOnScroll>
-        <Timeline />
+        <section className="section">
+          <p className="section__label">Программа дня</p>
+
+          <h2 className="section__title">Как пройдёт этот день</h2>
+
+          <Timeline />
+        </section>
       </AnimateOnScroll>
+      <Divider />
       <AnimateOnScroll>
         <EventSection
           label="Роспись"
@@ -36,7 +45,7 @@ function App() {
           dateTime="02 октября 2026 • 11:00"
           place='Дворец бракосочетания "Екатерининский зал"'
           address="ул. Офицерская, 47"
-          mapLink="https://yandex.ru/maps/"
+          mapLink="https://yandex.ru/maps/-/CPXEZY-~"
         />
       </AnimateOnScroll>
       <Divider />

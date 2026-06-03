@@ -1,7 +1,7 @@
 function Divider() {
   return (
-    <div className="divider">
-      ❦
+    <div className="section-divider">
+      <span></span>
     </div>
   );
 }
