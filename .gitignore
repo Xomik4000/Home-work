@@ -43,3 +43,5 @@ vendor/
 # Ошибки и служебные файлы системы
 *.swp
 *.swo
+
+movle-explorer/node_modules/
