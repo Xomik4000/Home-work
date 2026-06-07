@@ -11,7 +11,7 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
-        Movie Explorer
+        🎬 CinemaHub
       </NavLink>
 
       <nav className={styles.nav}>

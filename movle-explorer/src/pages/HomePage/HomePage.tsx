@@ -12,6 +12,7 @@ import {
 import { useMovieFilters } from "../../features/filters/hooks/useMovieFilters";
 import type { Movie, Genre } from "../../features/movies/types/movie.types";
 import { useFavorites } from "../../features/favorites/hooks/useFavorites";
+import styles from "./HomePage.module.css";
 
 export function HomePage() {
   const [query, setQuery] = useState("");
@@ -107,7 +108,20 @@ export function HomePage() {
 
   return (
     <section>
-      <h1>{searchQuery ? "Результаты поиска" : "Новинки кино"}</h1>
+      <div className={styles.hero}>
+        <p className={styles.eyebrow}>CinemaHub</p>
+
+        <h1 className={styles.title}>Откройте мир кино и сериалов</h1>
+
+        <p className={styles.description}>
+          Ищите фильмы, изучайте рейтинги, сохраняйте избранное и находите
+          актуальные новинки в одном удобном приложении.
+        </p>
+      </div>
+
+      <h2 className={styles.sectionTitle}>
+        {searchQuery ? "Результаты поиска" : "Новинки кино"}
+      </h2>
 
       <SearchBar
         value={query}
@@ -156,14 +170,17 @@ export function HomePage() {
         )}
 
       {!isLoading && !error && movies.length === 0 && searchQuery && (
-        <div>
+        <div className={styles.emptyState}>
           <h2>Фильм «{searchQuery}» не найден</h2>
           <p>Попробуйте изменить поисковый запрос.</p>
         </div>
       )}
 
       {!isLoading && !error && movies.length === 0 && !searchQuery && (
-        <p>Фильмы не найдены.</p>
+        <div className={styles.emptyState}>
+          <h2>Фильмы не найдены</h2>
+          <p>Попробуйте обновить страницу или изменить фильтры.</p>
+        </div>
       )}
     </section>
   );

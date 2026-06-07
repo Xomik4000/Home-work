@@ -36,9 +36,7 @@ export function MovieFilters({
         ))}
       </select>
 
-      <input
-        type="number"
-        placeholder="Год"
+      <select
         value={filters.year}
         onChange={(event) =>
           onChange({
@@ -46,7 +44,19 @@ export function MovieFilters({
             year: event.target.value,
           })
         }
-      />
+      >
+        <option value="">Любой год</option>
+
+        {Array.from({ length: new Date().getFullYear() - 1979 }, (_, index) => {
+          const year = String(new Date().getFullYear() - index);
+
+          return (
+            <option key={year} value={year}>
+              {year}
+            </option>
+          );
+        })}
+      </select>
 
       <select
         value={filters.minRating}
