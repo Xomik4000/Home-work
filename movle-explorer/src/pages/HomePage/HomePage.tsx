@@ -155,7 +155,16 @@ export function HomePage() {
           <p>По выбранным фильтрам ничего не найдено.</p>
         )}
 
-      {!isLoading && !error && movies.length === 0 && <p>Фильмы не найдены.</p>}
+      {!isLoading && !error && movies.length === 0 && searchQuery && (
+        <div>
+          <h2>Фильм «{searchQuery}» не найден</h2>
+          <p>Попробуйте изменить поисковый запрос.</p>
+        </div>
+      )}
+
+      {!isLoading && !error && movies.length === 0 && !searchQuery && (
+        <p>Фильмы не найдены.</p>
+      )}
     </section>
   );
 }
