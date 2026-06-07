@@ -63,3 +63,21 @@ export async function getMovieGenres(): Promise<Genre[]> {
 
   return data.genres;
 }
+
+export async function getNowPlayingMovies(page = 1) {
+  const params = new URLSearchParams({
+    page: String(page),
+    language: "ru-RU",
+  });
+
+  const data = await tmdbFetch<TmdbSearchMoviesResponse>(
+    `/movie/now_playing?${params.toString()}`,
+  );
+
+  return {
+    page: data.page,
+    movies: data.results.map(mapMovie),
+    totalPages: data.total_pages,
+    totalResults: data.total_results,
+  };
+}

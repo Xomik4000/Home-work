@@ -7,6 +7,7 @@ import { SkeletonGrid } from "../../components/SkeletonGrid/SkeletonGrid";
 import {
   searchMovies,
   getMovieGenres,
+  getNowPlayingMovies,
 } from "../../features/movies/api/movieApi";
 import { useMovieFilters } from "../../features/filters/hooks/useMovieFilters";
 import type { Movie, Genre } from "../../features/movies/types/movie.types";
@@ -22,6 +23,7 @@ export function HomePage() {
   const { filters, setFilters, resetFilters } = useMovieFilters();
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const loadGenres = async () => {
@@ -34,6 +36,27 @@ export function HomePage() {
     };
 
     void loadGenres();
+  }, []);
+
+  const loadNowPlayingMovies = async (nextPage = 1) => {
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      const data = await getNowPlayingMovies(nextPage);
+
+      setMovies(data.movies);
+      setPage(data.page);
+      setTotalPages(data.totalPages);
+    } catch {
+      setError("Не удалось загрузить новинки кино");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    void loadNowPlayingMovies();
   }, []);
 
   const filteredMovies = useMemo(() => {
@@ -58,6 +81,8 @@ export function HomePage() {
     const trimmedQuery = query.trim();
 
     if (!trimmedQuery) {
+      setSearchQuery("");
+      await loadNowPlayingMovies(nextPage);
       return;
     }
 
@@ -67,6 +92,7 @@ export function HomePage() {
 
       const data = await searchMovies(trimmedQuery, nextPage);
 
+      setSearchQuery(trimmedQuery);
       setMovies(data.movies);
       setPage(data.page);
       setTotalPages(data.totalPages);
@@ -81,7 +107,7 @@ export function HomePage() {
 
   return (
     <section>
-      <h1>Поиск фильмов</h1>
+      <h1>{searchQuery ? "Результаты поиска" : "Новинки кино"}</h1>
 
       <SearchBar
         value={query}
@@ -112,18 +138,24 @@ export function HomePage() {
         <Pagination
           currentPage={page}
           totalPages={safeTotalPages}
-          onPageChange={handleSearch}
+          onPageChange={(nextPage) => {
+            if (searchQuery) {
+              void handleSearch(nextPage);
+            } else {
+              void loadNowPlayingMovies(nextPage);
+            }
+          }}
         />
       )}
 
       {!isLoading &&
         !error &&
         movies.length > 0 &&
-        filteredMovies.length === 0 && <p>По выбранным фильтрам ничего не найдено.</p>}
+        filteredMovies.length === 0 && (
+          <p>По выбранным фильтрам ничего не найдено.</p>
+        )}
 
-      {!isLoading && !error && movies.length === 0 && (
-        <p>Начните поиск фильма.</p>
-      )}
+      {!isLoading && !error && movies.length === 0 && <p>Фильмы не найдены.</p>}
     </section>
   );
 }
