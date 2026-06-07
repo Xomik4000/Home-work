@@ -39,6 +39,10 @@ export type TmdbMovieDetailsDto = {
   vote_average: number;
   runtime: number | null;
   genres: TmdbGenreDto[];
+  budget: number;
+  revenue: number;
+  homepage: string;
+  status: string;
 };
 
 export type Genre = {
@@ -49,6 +53,10 @@ export type Genre = {
 export type MovieDetails = Movie & {
   runtime: number | null;
   genres: Genre[];
+  budget: number;
+  revenue: number;
+  homepage: string;
+  status: string;
 };
 
 export type TmdbGenresResponse = {

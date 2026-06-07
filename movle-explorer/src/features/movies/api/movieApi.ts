@@ -53,6 +53,10 @@ export async function getMovieDetails(movieId: string): Promise<MovieDetails> {
     genreIds: data.genres.map((genre) => genre.id),
     runtime: data.runtime,
     genres: data.genres,
+    budget: data.budget,
+    revenue: data.revenue,
+    homepage: data.homepage,
+    status: data.status,
   };
 }
 

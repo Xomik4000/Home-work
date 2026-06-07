@@ -52,6 +52,18 @@ export function MovieDetailsPage() {
     ? new Date(movie.releaseDate).getFullYear()
     : "Год неизвестен";
 
+  const formatMoney = (value: number) => {
+    if (!value) {
+      return "Нет данных";
+    }
+
+    return new Intl.NumberFormat("ru-RU", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(value);
+  };
+
   return (
     <section>
       <Link className={styles.backLink} to="/">
@@ -86,9 +98,44 @@ export function MovieDetailsPage() {
             ))}
           </div>
 
+          <div className={styles.stats}>
+            <div className={styles.statCard}>
+              <span>Рейтинг</span>
+              <strong>⭐ {movie.voteAverage.toFixed(1)}</strong>
+            </div>
+
+            <div className={styles.statCard}>
+              <span>Длительность</span>
+              <strong>
+                {movie.runtime ? `${movie.runtime} мин` : "Нет данных"}
+              </strong>
+            </div>
+
+            <div className={styles.statCard}>
+              <span>Бюджет</span>
+              <strong>{formatMoney(movie.budget)}</strong>
+            </div>
+
+            <div className={styles.statCard}>
+              <span>Сборы</span>
+              <strong>{formatMoney(movie.revenue)}</strong>
+            </div>
+          </div>
+
           <p className={styles.overview}>
             {movie.overview || "Описание отсутствует."}
           </p>
+
+          {movie.homepage && (
+            <a
+              className={styles.homepageLink}
+              href={movie.homepage}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Открыть официальный сайт
+            </a>
+          )}
         </div>
       </div>
     </section>
