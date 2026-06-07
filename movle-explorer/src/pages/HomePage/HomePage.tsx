@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { MovieFilters } from "../../components/MovieFilters/MovieFilters";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
+import { Pagination } from "../../components/Pagination/Pagination";
 import { MovieGrid } from "../../components/MovieGrid/MovieGrid";
 import {
   searchMovies,
@@ -18,6 +19,8 @@ export function HomePage() {
   const { favorites, toggleFavorite } = useFavorites();
   const [genres, setGenres] = useState<Genre[]>([]);
   const { filters, setFilters, resetFilters } = useMovieFilters();
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     const loadGenres = async () => {
@@ -50,7 +53,7 @@ export function HomePage() {
     });
   }, [movies, filters]);
 
-  const handleSearch = async () => {
+  const handleSearch = async (nextPage = 1) => {
     const trimmedQuery = query.trim();
 
     if (!trimmedQuery) {
@@ -61,9 +64,11 @@ export function HomePage() {
       setIsLoading(true);
       setError(null);
 
-      const data = await searchMovies(trimmedQuery);
+      const data = await searchMovies(trimmedQuery, nextPage);
 
       setMovies(data.movies);
+      setPage(data.page);
+      setTotalPages(data.totalPages);
     } catch {
       setError("Failed to load movies");
     } finally {
@@ -71,11 +76,17 @@ export function HomePage() {
     }
   };
 
+  const safeTotalPages = Math.min(totalPages, 500);
+
   return (
     <section>
       <h1>Search movies</h1>
 
-      <SearchBar value={query} onChange={setQuery} onSubmit={handleSearch} />
+      <SearchBar
+        value={query}
+        onChange={setQuery}
+        onSubmit={() => handleSearch(1)}
+      />
 
       <MovieFilters
         filters={filters}
@@ -93,6 +104,14 @@ export function HomePage() {
           movies={filteredMovies}
           favoriteMovieIds={favorites.map((movie) => movie.id)}
           onToggleFavorite={toggleFavorite}
+        />
+      )}
+
+      {!isLoading && !error && filteredMovies.length > 0 && (
+        <Pagination
+          currentPage={page}
+          totalPages={safeTotalPages}
+          onPageChange={handleSearch}
         />
       )}
 
