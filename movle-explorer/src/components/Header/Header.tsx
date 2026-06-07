@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 import styles from "./Header.module.css";
 
-export function Header() {
+type HeaderProps = {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+};
+
+export function Header({ theme, onToggleTheme }: HeaderProps) {
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>
@@ -12,6 +18,8 @@ export function Header() {
         <NavLink to="/">Search</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
       </nav>
+
+      <ThemeToggle theme={theme} onToggle={onToggleTheme} />
     </header>
   );
 }
