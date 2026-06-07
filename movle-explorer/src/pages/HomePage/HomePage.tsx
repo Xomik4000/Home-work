@@ -3,6 +3,7 @@ import { MovieFilters } from "../../components/MovieFilters/MovieFilters";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { Pagination } from "../../components/Pagination/Pagination";
 import { MovieGrid } from "../../components/MovieGrid/MovieGrid";
+import { SkeletonGrid } from "../../components/SkeletonGrid/SkeletonGrid";
 import {
   searchMovies,
   getMovieGenres,
@@ -95,7 +96,7 @@ export function HomePage() {
         onReset={resetFilters}
       />
 
-      {isLoading && <p>Loading movies...</p>}
+      {isLoading && <SkeletonGrid />}
 
       {error && <p>{error}</p>}
 
