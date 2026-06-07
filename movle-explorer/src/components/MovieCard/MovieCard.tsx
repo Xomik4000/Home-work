@@ -1,22 +1,29 @@
-import type { Movie } from "../../features/movies/types/movie.types";
 import { Link } from "react-router-dom";
+import type { Movie } from "../../features/movies/types/movie.types";
 import styles from "./MovieCard.module.css";
 
 type MovieCardProps = {
   movie: Movie;
+  isFavorite?: boolean;
+  onToggleFavorite?: (movie: Movie) => void;
 };
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
-export function MovieCard({ movie }: MovieCardProps) {
+export function MovieCard({
+  movie,
+  isFavorite = false,
+  onToggleFavorite,
+}: MovieCardProps) {
   const year = movie.releaseDate
     ? new Date(movie.releaseDate).getFullYear()
     : "Unknown";
+
   const rating = movie.voteAverage.toFixed(1);
 
   return (
-    <Link className={styles.link} to={`/movie/${movie.id}`}>
-      <article className={styles.card}>
+    <article className={styles.card}>
+      <Link className={styles.link} to={`/movie/${movie.id}`}>
         <div className={styles.posterWrapper}>
           {movie.posterPath ? (
             <img
@@ -41,7 +48,17 @@ export function MovieCard({ movie }: MovieCardProps) {
             {movie.overview || "No description available."}
           </p>
         </div>
-      </article>
-    </Link>
+      </Link>
+
+      {onToggleFavorite && (
+        <button
+          className={styles.favoriteButton}
+          type="button"
+          onClick={() => onToggleFavorite(movie)}
+        >
+          {isFavorite ? "Remove from favorites" : "Add to favorites"}
+        </button>
+      )}
+    </article>
   );
 }

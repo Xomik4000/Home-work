@@ -3,12 +3,14 @@ import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { MovieGrid } from "../../components/MovieGrid/MovieGrid";
 import { searchMovies } from "../../features/movies/api/movieApi";
 import type { Movie } from "../../features/movies/types/movie.types";
+import { useFavorites } from "../../features/favorites/hooks/useFavorites";
 
 export function HomePage() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { favorites, toggleFavorite } = useFavorites();
 
   const handleSearch = async () => {
     const trimmedQuery = query.trim();
@@ -42,7 +44,11 @@ export function HomePage() {
       {error && <p>{error}</p>}
 
       {!isLoading && !error && movies.length > 0 && (
-        <MovieGrid movies={movies} />
+        <MovieGrid
+          movies={movies}
+          favoriteMovieIds={favorites.map((movie) => movie.id)}
+          onToggleFavorite={toggleFavorite}
+        />
       )}
 
       {!isLoading && !error && movies.length === 0 && (
