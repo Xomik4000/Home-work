@@ -24,3 +24,29 @@ export type Movie = {
   voteAverage: number;
   genreIds: number[];
 };
+
+export type TmdbGenreDto = {
+  id: number;
+  name: string;
+};
+
+export type TmdbMovieDetailsDto = {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string | null;
+  release_date: string;
+  vote_average: number;
+  runtime: number | null;
+  genres: TmdbGenreDto[];
+};
+
+export type Genre = {
+  id: number;
+  name: string;
+};
+
+export type MovieDetails = Movie & {
+  runtime: number | null;
+  genres: Genre[];
+};

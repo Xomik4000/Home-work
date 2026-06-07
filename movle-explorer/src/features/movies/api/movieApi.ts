@@ -2,7 +2,9 @@ import { tmdbFetch } from "../../../shared/api/tmdbClient";
 import type {
   Movie,
   TmdbMovieDto,
+  TmdbMovieDetailsDto,
   TmdbSearchMoviesResponse,
+  MovieDetails,
 } from "../types/movie.types";
 
 const mapMovie = (movie: TmdbMovieDto): Movie => ({
@@ -31,5 +33,23 @@ export async function searchMovies(query: string, page = 1) {
     movies: data.results.map(mapMovie),
     totalPages: data.total_pages,
     totalResults: data.total_results,
+  };
+}
+
+export async function getMovieDetails(movieId: string): Promise<MovieDetails> {
+  const data = await tmdbFetch<TmdbMovieDetailsDto>(
+    `/movie/${movieId}?language=en-US`,
+  );
+
+  return {
+    id: data.id,
+    title: data.title,
+    overview: data.overview,
+    posterPath: data.poster_path,
+    releaseDate: data.release_date,
+    voteAverage: data.vote_average,
+    genreIds: data.genres.map((genre) => genre.id),
+    runtime: data.runtime,
+    genres: data.genres,
   };
 }
