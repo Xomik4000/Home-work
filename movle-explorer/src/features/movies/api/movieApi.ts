@@ -5,6 +5,8 @@ import type {
   TmdbMovieDetailsDto,
   TmdbSearchMoviesResponse,
   MovieDetails,
+  Genre,
+  TmdbGenresResponse,
 } from "../types/movie.types";
 
 const mapMovie = (movie: TmdbMovieDto): Movie => ({
@@ -52,4 +54,12 @@ export async function getMovieDetails(movieId: string): Promise<MovieDetails> {
     runtime: data.runtime,
     genres: data.genres,
   };
+}
+
+export async function getMovieGenres(): Promise<Genre[]> {
+  const data = await tmdbFetch<TmdbGenresResponse>(
+    "/genre/movie/list?language=en-US",
+  );
+
+  return data.genres;
 }

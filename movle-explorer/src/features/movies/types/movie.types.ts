@@ -50,3 +50,13 @@ export type MovieDetails = Movie & {
   runtime: number | null;
   genres: Genre[];
 };
+
+export type TmdbGenresResponse = {
+  genres: Genre[];
+};
+
+export type MovieFilters = {
+  genreId: number | null;
+  year: string;
+  minRating: number;
+};
