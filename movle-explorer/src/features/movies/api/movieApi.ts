@@ -23,7 +23,7 @@ export async function searchMovies(query: string, page = 1) {
   const params = new URLSearchParams({
     query,
     page: String(page),
-    language: "en-US",
+    language: "ru-RU",
   });
 
   const data = await tmdbFetch<TmdbSearchMoviesResponse>(
@@ -40,7 +40,7 @@ export async function searchMovies(query: string, page = 1) {
 
 export async function getMovieDetails(movieId: string): Promise<MovieDetails> {
   const data = await tmdbFetch<TmdbMovieDetailsDto>(
-    `/movie/${movieId}?language=en-US`,
+    `/movie/${movieId}?language=ru-RU`,
   );
 
   return {
@@ -58,7 +58,7 @@ export async function getMovieDetails(movieId: string): Promise<MovieDetails> {
 
 export async function getMovieGenres(): Promise<Genre[]> {
   const data = await tmdbFetch<TmdbGenresResponse>(
-    "/genre/movie/list?language=en-US",
+    "/genre/movie/list?language=ru-RU",
   );
 
   return data.genres;
