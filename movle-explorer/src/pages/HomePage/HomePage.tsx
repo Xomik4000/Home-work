@@ -71,7 +71,7 @@ export function HomePage() {
       setPage(data.page);
       setTotalPages(data.totalPages);
     } catch {
-      setError("Failed to load movies");
+      setError("Не удалось загрузить фильмы");
     } finally {
       setIsLoading(false);
     }
@@ -81,7 +81,7 @@ export function HomePage() {
 
   return (
     <section>
-      <h1>Search movies</h1>
+      <h1>Поиск фильмов</h1>
 
       <SearchBar
         value={query}
@@ -119,10 +119,10 @@ export function HomePage() {
       {!isLoading &&
         !error &&
         movies.length > 0 &&
-        filteredMovies.length === 0 && <p>No movies match selected filters.</p>}
+        filteredMovies.length === 0 && <p>По выбранным фильтрам ничего не найдено.</p>}
 
       {!isLoading && !error && movies.length === 0 && (
-        <p>Start typing to search for movies.</p>
+        <p>Начните поиск фильма.</p>
       )}
     </section>
   );

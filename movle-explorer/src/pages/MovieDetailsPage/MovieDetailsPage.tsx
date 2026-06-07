@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { getMovieDetails } from '../../features/movies/api/movieApi';
-import type { MovieDetails } from '../../features/movies/types/movie.types';
-import styles from './MovieDetailsPage.module.css';
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { getMovieDetails } from "../../features/movies/api/movieApi";
+import type { MovieDetails } from "../../features/movies/types/movie.types";
+import styles from "./MovieDetailsPage.module.css";
 
-const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 export function MovieDetailsPage() {
   const { movieId } = useParams<{ movieId: string }>();
@@ -27,7 +27,7 @@ export function MovieDetailsPage() {
 
         setMovie(data);
       } catch {
-        setError('Failed to load movie details');
+        setError("Не удалось загрузить информацию о фильме");
       } finally {
         setIsLoading(false);
       }
@@ -37,7 +37,7 @@ export function MovieDetailsPage() {
   }, [movieId]);
 
   if (isLoading) {
-    return <p>Loading movie details...</p>;
+    return <p>Загрузка информации о фильме...</p>;
   }
 
   if (error) {
@@ -45,17 +45,17 @@ export function MovieDetailsPage() {
   }
 
   if (!movie) {
-    return <p>Movie not found.</p>;
+    return <p>Фильм не найден.</p>;
   }
 
   const year = movie.releaseDate
     ? new Date(movie.releaseDate).getFullYear()
-    : 'Unknown';
+    : "Год неизвестен";
 
   return (
     <section>
       <Link className={styles.backLink} to="/">
-        ← Back to search
+        ← Вернуться к поиску
       </Link>
 
       <div className={styles.details}>
@@ -67,7 +67,7 @@ export function MovieDetailsPage() {
               alt={movie.title}
             />
           ) : (
-            <div className={styles.posterPlaceholder}>No image</div>
+            <div className={styles.posterPlaceholder}>Нет изображения</div>
           )}
         </div>
 
@@ -87,7 +87,7 @@ export function MovieDetailsPage() {
           </div>
 
           <p className={styles.overview}>
-            {movie.overview || 'No description available.'}
+            {movie.overview || "Описание отсутствует."}
           </p>
         </div>
       </div>

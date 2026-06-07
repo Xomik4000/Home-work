@@ -7,15 +7,15 @@ export function FavoritesPage() {
   if (favorites.length === 0) {
     return (
       <section>
-        <h1>Favorite movies</h1>
-        <p>You have no favorite movies yet.</p>
+        <h1>Избранные фильмы</h1>
+        <p>У вас пока нет избранных фильмов.</p>
       </section>
     );
   }
 
   return (
     <section>
-      <h1>Favorite movies</h1>
+      <h1>Избранные фильмы</h1>
 
       <MovieGrid
         movies={favorites}

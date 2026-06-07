@@ -15,8 +15,8 @@ export function Header({ theme, onToggleTheme }: HeaderProps) {
       </NavLink>
 
       <nav className={styles.nav}>
-        <NavLink to="/">Search</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
+        <NavLink to="/">Поиск</NavLink>
+        <NavLink to="/favorites">Избранное</NavLink>
       </nav>
 
       <ThemeToggle theme={theme} onToggle={onToggleTheme} />

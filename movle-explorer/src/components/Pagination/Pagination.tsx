@@ -22,11 +22,11 @@ export function Pagination({
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
       >
-        Previous
+        Назад
       </button>
 
       <span>
-        Page {currentPage} of {totalPages}
+        Страница {currentPage} из {totalPages}
       </span>
 
       <button
@@ -34,7 +34,7 @@ export function Pagination({
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
       >
-        Next
+        Вперёд
       </button>
     </div>
   );

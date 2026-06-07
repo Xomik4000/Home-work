@@ -8,7 +8,7 @@ type ThemeToggleProps = {
 export function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
   return (
     <button className={styles.button} type="button" onClick={onToggle}>
-      {theme === "light" ? "🌙 Dark" : "☀️ Light"}
+      {theme === "light" ? "🌙 Тёмная" : "☀️ Светлая"}
     </button>
   );
 }

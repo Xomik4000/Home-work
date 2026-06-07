@@ -20,11 +20,11 @@ export function SearchBar({ value, onChange, onSubmit }: SearchBarProps) {
         type="search"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        placeholder="Search movies..."
+        placeholder="Введите название фильма..."
       />
 
       <button className={styles.button} type="submit">
-        Search
+        Найти
       </button>
     </form>
   );

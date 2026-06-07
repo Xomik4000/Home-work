@@ -28,7 +28,7 @@ export function MovieFilters({
           })
         }
       >
-        <option value="">All genres</option>
+        <option value="">Все жанры</option>
         {genres.map((genre) => (
           <option key={genre.id} value={genre.id}>
             {genre.name}
@@ -38,7 +38,7 @@ export function MovieFilters({
 
       <input
         type="number"
-        placeholder="Year"
+        placeholder="Год"
         value={filters.year}
         onChange={(event) =>
           onChange({
@@ -57,7 +57,7 @@ export function MovieFilters({
           })
         }
       >
-        <option value={0}>Any rating</option>
+        <option value={0}>Любой рейтинг</option>
         <option value={5}>5+</option>
         <option value={6}>6+</option>
         <option value={7}>7+</option>
@@ -65,7 +65,7 @@ export function MovieFilters({
       </select>
 
       <button type="button" onClick={onReset}>
-        Reset
+        Сбросить
       </button>
     </div>
   );

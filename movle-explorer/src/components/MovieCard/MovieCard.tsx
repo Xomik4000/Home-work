@@ -17,7 +17,7 @@ export function MovieCard({
 }: MovieCardProps) {
   const year = movie.releaseDate
     ? new Date(movie.releaseDate).getFullYear()
-    : "Unknown";
+    : "Год неизвестен";
 
   const rating = movie.voteAverage.toFixed(1);
 
@@ -32,7 +32,7 @@ export function MovieCard({
               alt={movie.title}
             />
           ) : (
-            <div className={styles.posterPlaceholder}>No image</div>
+            <div className={styles.posterPlaceholder}>Нет изображения</div>
           )}
         </div>
 
@@ -45,7 +45,7 @@ export function MovieCard({
           </div>
 
           <p className={styles.overview}>
-            {movie.overview || "No description available."}
+            {movie.overview || "Описание отсутствует."}
           </p>
         </div>
       </Link>
@@ -56,7 +56,7 @@ export function MovieCard({
           type="button"
           onClick={() => onToggleFavorite(movie)}
         >
-          {isFavorite ? "Remove from favorites" : "Add to favorites"}
+          {isFavorite ? "Удалить из избранного" : "Добавить в избранное"}
         </button>
       )}
     </article>
