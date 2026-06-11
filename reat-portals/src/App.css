@@ -1,0 +1,22 @@
+.parent {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  border: 2px solid red;
+  padding: 20px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  color: black;
+  padding: 20px;
+  width: 300px;
+  margin: 80px auto;
+}
