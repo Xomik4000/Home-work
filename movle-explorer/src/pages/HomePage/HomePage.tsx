@@ -106,6 +106,9 @@ export function HomePage() {
 
   const safeTotalPages = Math.min(totalPages, 500);
 
+  const hasActiveFilters =
+    filters.genreId !== null || filters.year !== "" || filters.minRating > 0;
+
   return (
     <section>
       <div className={styles.hero}>
@@ -153,6 +156,12 @@ export function HomePage() {
         onReset={resetFilters}
       />
 
+      {!isLoading && !error && movies.length > 0 && (
+        <p className={styles.resultsCount}>
+          Показано фильмов: {filteredMovies.length}
+        </p>
+      )}
+
       {isLoading && <SkeletonGrid />}
 
       {error && <p>{error}</p>}
@@ -165,19 +174,22 @@ export function HomePage() {
         />
       )}
 
-      {!isLoading && !error && filteredMovies.length > 0 && (
-        <Pagination
-          currentPage={page}
-          totalPages={safeTotalPages}
-          onPageChange={(nextPage) => {
-            if (searchQuery) {
-              void handleSearch(nextPage);
-            } else {
-              void loadNowPlayingMovies(nextPage);
-            }
-          }}
-        />
-      )}
+      {!isLoading &&
+        !error &&
+        filteredMovies.length > 0 &&
+        !hasActiveFilters && (
+          <Pagination
+            currentPage={page}
+            totalPages={safeTotalPages}
+            onPageChange={(nextPage) => {
+              if (searchQuery) {
+                void handleSearch(nextPage);
+              } else {
+                void loadNowPlayingMovies(nextPage);
+              }
+            }}
+          />
+        )}
 
       {!isLoading &&
         !error &&
