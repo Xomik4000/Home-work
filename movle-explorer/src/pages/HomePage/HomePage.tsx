@@ -119,9 +119,26 @@ export function HomePage() {
         </p>
       </div>
 
-      <h2 className={styles.sectionTitle}>
-        {searchQuery ? "Результаты поиска" : "Новинки кино"}
-      </h2>
+      <div className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>
+          {searchQuery ? `Результаты поиска: ${searchQuery}` : "Новинки кино"}
+        </h2>
+
+        {searchQuery && (
+          <button
+            className={styles.resetSearchButton}
+            type="button"
+            onClick={() => {
+              setQuery("");
+              setSearchQuery("");
+              resetFilters();
+              void loadNowPlayingMovies(1);
+            }}
+          >
+            ← Вернуться к новинкам
+          </button>
+        )}
+      </div>
 
       <SearchBar
         value={query}

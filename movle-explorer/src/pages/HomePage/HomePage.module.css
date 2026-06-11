@@ -71,3 +71,38 @@
     font-size: 17px;
   }
 }
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.resetSearchButton {
+  padding: 11px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.resetSearchButton:hover {
+  transform: translateY(-2px);
+  background: var(--muted-color);
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
