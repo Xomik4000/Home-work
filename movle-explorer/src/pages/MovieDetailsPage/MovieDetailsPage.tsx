@@ -13,6 +13,8 @@ export function MovieDetailsPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const hasReadableLetters = (text: string) => /[A-Za-zА-Яа-яЁё]/.test(text);
+
   useEffect(() => {
     if (!movieId) {
       return;
@@ -85,6 +87,11 @@ export function MovieDetailsPage() {
 
         <div className={styles.content}>
           <h1 className={styles.title}>{movie.title}</h1>
+
+          {movie.originalTitle !== movie.title &&
+            hasReadableLetters(movie.originalTitle) && (
+              <p className={styles.originalTitle}>{movie.originalTitle}</p>
+            )}
 
           <div className={styles.meta}>
             <span>{year}</span>

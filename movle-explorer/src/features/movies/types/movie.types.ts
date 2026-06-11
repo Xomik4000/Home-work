@@ -1,6 +1,7 @@
 export type TmdbMovieDto = {
   id: number;
   title: string;
+  original_title: string;
   overview: string;
   poster_path: string | null;
   release_date: string;
@@ -18,6 +19,7 @@ export type TmdbSearchMoviesResponse = {
 export type Movie = {
   id: number;
   title: string;
+  originalTitle: string;
   overview: string;
   posterPath: string | null;
   releaseDate: string;
@@ -33,6 +35,7 @@ export type TmdbGenreDto = {
 export type TmdbMovieDetailsDto = {
   id: number;
   title: string;
+  original_title: string;
   overview: string;
   poster_path: string | null;
   release_date: string;

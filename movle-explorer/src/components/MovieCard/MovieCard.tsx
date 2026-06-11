@@ -15,6 +15,8 @@ export function MovieCard({
   isFavorite = false,
   onToggleFavorite,
 }: MovieCardProps) {
+  const hasReadableLetters = (text: string) => /[A-Za-zА-Яа-яЁё]/.test(text);
+
   const year = movie.releaseDate
     ? new Date(movie.releaseDate).getFullYear()
     : "Год неизвестен";
@@ -57,6 +59,11 @@ export function MovieCard({
           </div>
 
           <h3 className={styles.title}>{movie.title}</h3>
+
+          {movie.originalTitle !== movie.title &&
+            hasReadableLetters(movie.originalTitle) && (
+              <p className={styles.originalTitle}>{movie.originalTitle}</p>
+            )}
 
           <p className={styles.overview}>
             {movie.overview || "Описание отсутствует."}

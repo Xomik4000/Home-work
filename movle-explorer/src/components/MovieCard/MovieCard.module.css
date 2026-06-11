@@ -114,3 +114,10 @@
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+
+.originalTitle {
+  margin: -4px 0 10px;
+  color: var(--muted-text-color);
+  font-size: 13px;
+  line-height: 1.4;
+}

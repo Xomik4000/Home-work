@@ -9,9 +9,24 @@ import type {
   TmdbGenresResponse,
 } from "../types/movie.types";
 
+const hasReadableLetters = (text: string) => /[A-Za-zА-Яа-яЁё]/.test(text);
+
+const getDisplayTitle = (title: string, originalTitle: string) => {
+  if (hasReadableLetters(title)) {
+    return title;
+  }
+
+  if (hasReadableLetters(originalTitle)) {
+    return originalTitle;
+  }
+
+  return "Название недоступно";
+};
+
 const mapMovie = (movie: TmdbMovieDto): Movie => ({
   id: movie.id,
-  title: movie.title,
+  title: getDisplayTitle(movie.title, movie.original_title),
+  originalTitle: movie.original_title,
   overview: movie.overview,
   posterPath: movie.poster_path,
   releaseDate: movie.release_date,
@@ -45,7 +60,8 @@ export async function getMovieDetails(movieId: string): Promise<MovieDetails> {
 
   return {
     id: data.id,
-    title: data.title,
+    title: getDisplayTitle(data.title, data.original_title),
+    originalTitle: data.original_title,
     overview: data.overview,
     posterPath: data.poster_path,
     releaseDate: data.release_date,
