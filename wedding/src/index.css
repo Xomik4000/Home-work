@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap");
 
 * {
   margin: 0;
@@ -10,6 +9,6 @@
 body {
   background: #f8f4ef;
   color: #3a312c;
-  font-family: "Playfair Display", serif;
+  font-family: "Cormorant Garamond", serif;
   padding: 24px;
 }

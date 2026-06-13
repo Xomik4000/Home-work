@@ -18,7 +18,6 @@ function App() {
 
         <h1 className="hero__title">Саша & Настя</h1>
 
-        <p className="hero__date">02 октября 2026</p>
         <p className="hero__text">
           С любовью приглашаем вас разделить этот особенный день вместе с нами
         </p>
@@ -41,21 +40,11 @@ function App() {
       <AnimateOnScroll>
         <EventSection
           label="Роспись"
-          title="Мы будем рады видеть вас на нашей церемонии"
-          dateTime="02 октября 2026 • 11:00"
+          title="Мы скажем друг другу «Да»"
+          dateTime="11:00"
           place='Дворец бракосочетания "Екатерининский зал"'
           address="ул. Офицерская, 47"
           mapLink="https://yandex.ru/maps/-/CPXEZY-~"
-        />
-      </AnimateOnScroll>
-      <Divider />
-      <AnimateOnScroll>
-        <EventSection
-          label="Празднование"
-          title="Продолжим этот особенный день вместе"
-          dateTime="После церемонии"
-          place="Ресторан уточняется"
-          address="Адрес появится позже"
         />
       </AnimateOnScroll>
       <Divider />

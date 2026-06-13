@@ -19,11 +19,11 @@ function EventSection({
     <section className="section">
       <p className="section__label">{label}</p>
 
-      <h2 className="section__title">{title}</h2>
+      {title && <h2 className="section__title">{title}</h2>}
 
-      <p className="section__info">{dateTime}</p>
+      <p className="section__time">{dateTime}</p>
 
-      <p className="section__info">{place}</p>
+      <p className="section__place">{place}</p>
 
       <p className="section__address">{address}</p>
       {mapLink && (
@@ -33,7 +33,7 @@ function EventSection({
           rel="noreferrer"
           className="section__button"
         >
-           Как добраться
+          Как добраться
         </a>
       )}
     </section>

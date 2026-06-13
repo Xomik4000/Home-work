@@ -1,7 +1,7 @@
 function WeddingCalendar() {
   return (
     <section className="section">
-      <p className="section__label">Календарь</p>
+      <p className="section__label">Дата проведения</p>
 
       <h2 className="section__title">Октябрь 2026</h2>
 
