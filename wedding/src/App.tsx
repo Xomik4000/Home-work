@@ -5,7 +5,7 @@ import WeddingCalendar from "./components/WeddingCalendar";
 import Footer from "./components/Footer";
 import AnimateOnScroll from "./components/AnimateOnScroll";
 import Timeline from "./components/Timeline";
-import hallImage from "./assets/ekaterininsky-hall.jpeg";
+import hallImage from "./assets/ekaterininsky-hall.png";
 import "./App.css";
 
 function App() {

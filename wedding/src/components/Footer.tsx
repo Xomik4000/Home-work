@@ -8,7 +8,7 @@ function Footer() {
       </p>
 
       <p className="footer__names">
-        Саша и Настя
+        Саша & Настя
       </p>
     </section>
   );
