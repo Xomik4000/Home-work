@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { useFilteredMovies } from "../../features/filters/hooks/useFilteredMovies";
 import { MovieFilters } from "../../components/MovieFilters/MovieFilters";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { Pagination } from "../../components/Pagination/Pagination";
@@ -13,6 +14,8 @@ import { useMovieFilters } from "../../features/filters/hooks/useMovieFilters";
 import type { Movie, Genre } from "../../features/movies/types/movie.types";
 import { useFavorites } from "../../features/favorites/hooks/useFavorites";
 import styles from "./HomePage.module.css";
+
+const MAX_API_PAGES = 500;
 
 export function HomePage() {
   const [query, setQuery] = useState("");
@@ -39,7 +42,7 @@ export function HomePage() {
     void loadGenres();
   }, []);
 
-  const loadNowPlayingMovies = async (nextPage = 1) => {
+  const loadNowPlayingMovies = useCallback(async (nextPage = 1) => {
     try {
       setIsLoading(true);
       setError(null);
@@ -54,57 +57,44 @@ export function HomePage() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     void loadNowPlayingMovies();
-  }, []);
+  }, [loadNowPlayingMovies]);
 
-  const filteredMovies = useMemo(() => {
-    return movies.filter((movie) => {
-      const matchesGenre = filters.genreId
-        ? movie.genreIds.includes(filters.genreId)
-        : true;
+  const filteredMovies = useFilteredMovies(movies, filters);
 
-      const movieYear = movie.releaseDate
-        ? String(new Date(movie.releaseDate).getFullYear())
-        : "";
+  const handleSearch = useCallback(
+    async (nextPage = 1) => {
+      const trimmedQuery = query.trim();
 
-      const matchesYear = filters.year ? movieYear === filters.year : true;
+      if (!trimmedQuery) {
+        setSearchQuery("");
+        await loadNowPlayingMovies(nextPage);
+        return;
+      }
 
-      const matchesRating = movie.voteAverage >= filters.minRating;
+      try {
+        setIsLoading(true);
+        setError(null);
 
-      return matchesGenre && matchesYear && matchesRating;
-    });
-  }, [movies, filters]);
+        const data = await searchMovies(trimmedQuery, nextPage);
 
-  const handleSearch = async (nextPage = 1) => {
-    const trimmedQuery = query.trim();
+        setSearchQuery(trimmedQuery);
+        setMovies(data.movies);
+        setPage(data.page);
+        setTotalPages(data.totalPages);
+      } catch {
+        setError("Не удалось загрузить фильмы");
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [query, loadNowPlayingMovies],
+  );
 
-    if (!trimmedQuery) {
-      setSearchQuery("");
-      await loadNowPlayingMovies(nextPage);
-      return;
-    }
-
-    try {
-      setIsLoading(true);
-      setError(null);
-
-      const data = await searchMovies(trimmedQuery, nextPage);
-
-      setSearchQuery(trimmedQuery);
-      setMovies(data.movies);
-      setPage(data.page);
-      setTotalPages(data.totalPages);
-    } catch {
-      setError("Не удалось загрузить фильмы");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const safeTotalPages = Math.min(totalPages, 500);
+  const safeTotalPages = Math.min(totalPages, MAX_API_PAGES);
 
   const hasActiveFilters =
     filters.genreId !== null || filters.year !== "" || filters.minRating > 0;
