@@ -124,6 +124,18 @@
   margin-bottom: 24px;
 }
 
+.section__description {
+  max-width: 420px;
+
+  margin: 0 auto 20px;
+
+  font-size: 20px;
+
+  line-height: 1.6;
+
+  opacity: 0.8;
+}
+
 .section__subtitle {
   font-size: 18px;
 

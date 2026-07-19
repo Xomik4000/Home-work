@@ -1,7 +1,7 @@
 type EventSectionProps = {
   label: string;
   title: string;
-  dateTime: string;
+  description: string;
   place: string;
   address: string;
   mapLink?: string;
@@ -10,7 +10,7 @@ type EventSectionProps = {
 function EventSection({
   label,
   title,
-  dateTime,
+  description,
   place,
   address,
   mapLink,
@@ -21,7 +21,13 @@ function EventSection({
 
       {title && <h2 className="section__title">{title}</h2>}
 
-      <p className="section__time">{dateTime}</p>
+      <p
+        className={
+          description.length < 10 ? "section__time" : "section__description"
+        }
+      >
+        {description}
+      </p>
 
       <p className="section__place">{place}</p>
 

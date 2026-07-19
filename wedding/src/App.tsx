@@ -41,10 +41,22 @@ function App() {
         <EventSection
           label="Роспись"
           title="Мы скажем друг другу «Да»"
-          dateTime="11:00"
+          description="11:00"
           place='Дворец бракосочетания "Екатерининский зал"'
           address="ул. Офицерская, 47"
           mapLink="https://yandex.ru/maps/-/CPXEZY-~"
+        />
+      </AnimateOnScroll>
+      <Divider />
+
+      <AnimateOnScroll>
+        <EventSection
+          label="Праздничный вечер"
+          title="Продолжим этот особенный день вместе"
+          description="После церемонии мы будем рады провести этот вечер в кругу самых близких людей."
+          place="Ресторан AMAVI"
+          address="ул. им. Героя Владислава Посадского, 2Е, Краснодар"
+          mapLink="https://yandex.ru/maps/?text=Ресторан%20AMAVI%20Краснодар"
         />
       </AnimateOnScroll>
       <Divider />
