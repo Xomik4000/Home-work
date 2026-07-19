@@ -34,7 +34,7 @@ function Timeline() {
 
         <div className="timeline__content">
           <h3>Праздничный вечер</h3>
-          <p>Информация появится позже</p>
+          <p>Ресторан AMAVI</p>
         </div>
       </div>
     </div>
